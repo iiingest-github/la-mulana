@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>巨人灵庙</h1>
+	<table class="table table-bordered table-img" style="width:735px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td></td><td colspan="2" onclick="tomark('b1c1')">终堂</td><td rowspan="2" onclick="tomark('d1d2')">赎罪之间</td><td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td onclick="tomark('a2')">巨人的祠堂</td><td colspan="2" onclick="tomark('b2c2')">巨人的参道</td><td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td></td><td></td><td></td><td onclick="tomark('d3')">Zebu之间</td><td rowspan="3">通向天的竖穴</td><td onclick="tomark('f3')">赫尔墨斯纪念碑</td><td onclick="tomark('g3')">海豚之间</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td></td><td></td><td></td><td></td><td colspan="3" onclick="tomark('f4g4h4')">星之巨人殿</td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td></td><td colspan="3" onclick="tomark('b5c5d5')">月之巨人殿</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">6</th><td></td><td></td><td></td><td></td><td onclick="tomark('e6')">天文盘</td><td></td><td></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="map-info">
+	<h4>区域信息</h4>
+	<ul>
+		<li>初始时所有房间可去，注意D1右上角石碑为困难模式开关</li>
+	</ul>
+	<h4>出入口</h4>
+	<ul>
+		<li>E3：圣杯石碑</li>
+		<li>B1←→引导之门A6，时代之碑</li>
+		<li>B5←→无限回廊D1，第1无限回廊</li>
+		<li>H4←→双连迷宫A2，双子的周壁</li>
+		<li><span class="hide">D5→空之水源C5，圣池（刚进去是死路，完成女神之塔的任务才开放）</span></li>
+		<li>D3←→巨人墓场C3，Abuto之墓（击败Sakit并取得铜镜后）</li>
+	</ul>
+	<h4>获得物</h4>
+	<ul>
+		<li>武器：<a href="javascript:tomark2('rolling')">滚地手里剑</a></li>
+		<li>物品：<a href="javascript:tomark2('shop')">赫尔墨斯之靴</a></li>
+		<li>其他：<a href="javascript:tomark2('map')">地图</a>、<a href="javascript:tomark2('orb')">生命宝珠</a>、<a href="javascript:tomark2('jewel')">十字架宝石</a></li>
+		<li>宝箱：<a href="javascript:tomark2('chest')">C1</a></li>
+	</ul>
+	<h4 id="b1c1">终堂（B1、C1）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C1-陷阱</td><td>不踩C2机关去放重物，会掉刺</td>
+			</tr>
+			<tr id="chest">
+				<td>C1-宝箱</td><td>来到左下角，用手里剑击破对面的墙</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b2c2">巨人的参道（B2、C2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="map">
+				<td>C2-地图</td><td>踩中间平台的机关，再去C1机关放重物解锁</td><td class="tip">※背景图中，宝箱分别连接至两个机关</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a2">巨人的祠堂（A2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="rolling">
+				<td>A2-滚地手里剑</td><td>杀死几只幽灵后，出现幽灵之王，击败后解锁</td><td class="tip">住在这里的是幽灵之王。集合吧，集合吧。幽灵之王就要诞生了。集合吧，集合吧。等待他变得巨大。——石碑（巨人灵庙B2）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d1d2">赎罪之间（D1、D2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D1-右上石碑</td><td>调查两次会出现红色骷髅头，进入困难模式（注意：Steam版不能调低难度，只能读档）</td><td class="tip">这块石碑不能再看第2次。违反警告的人将被予以死的痛苦。——石碑（巨人灵庙D1）</td>
+			</tr>
+			<tr>
+				<td>D2-地板</td><td>中间地板会塌，掉到D3，注意有刺</td><td></td>
+			</tr>
+			<tr>
+				<td>D2-陷阱</td><td>石碑左下方有陷阱门，会直接掉到D3的刺上</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d3">Zebu之间（D3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D3-巨人像</td><td>巨人像为长子Zebu</td><td class="tip">最早出生的Zebu，为了支撑大地而无法移动。——石碑（巨人灵庙H4）</td>
+			</tr>
+			<tr>
+				<td><span class="hide">D3-体重计</span></td><td><span class="hide">从D2二段跳或用钩爪可到达左上角体重计，用于后期天平谜题</span></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f3">赫尔墨斯纪念碑（F3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="shop">
+				<td>F3-商店</td><td>打碎壶进入，可购买赫尔墨斯之靴（60G）、滚地手里剑（10枚10G）、重物（5枚10G）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="g3">海豚之间（G3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="jewel">
+				<td>G3-十字架宝石</td><td>从F3进入左上角，放重物解锁，再从下方梯子进入（设置天文盘为星星在上）</td><td></td>
+			</tr>
+			<tr>
+				<td>G3-陷阱</td><td>取走宝石后，停留在该处会被激光关起来，用滚地手里剑击破下方的脸可以解除</td><td class="tip">夺走红色　的　，无法再从　出去。——石碑（巨人灵庙F4）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f4g4h4">星之巨人殿（F4、G4、H4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>F4、G4、H4-巨人像</td><td>送母派4人，从左往右依次为Migela、Futo、Bado、Ledo</td><td rowspan="3" class="tip"><ul class="tip">
+					<li>Bado、Migela、Ledo、Futo四人为了送母亲回天，制作了会飞的塔。——石碑（巨人灵庙E5）</li>
+					<li>Migela是左撇子。——石碑（巨人灵庙G3）</li>
+					<li>Bado在满天繁星之日陷入了沉睡。——石碑（巨人灵庙F3）</li>
+					<li>Ledo在太阳照耀之日战败，胸口破开一个大洞，陷入了长眠。——石碑（巨人灵庙D2）</li>
+					<li>※Futo没有专门描述，用排除法可知是左二</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>G4-梯子</td><td>将E6天文盘设置为星星在上，巨人像倒下（注意穆拉纳特产1），借此爬上梯子</td>
+			</tr>
+			<tr>
+				<td>H4-机关</td><td>将E6天文盘设置为太阳在上，巨人像胸口出现机关，放重物解锁C2十字架</td>
+			</tr>
+			<tr id="orb">
+				<td>F4-生命宝珠</td><td>在右侧巨人像脚上放重物解锁</td><td class="tip" rowspan="2">「Futo脚下有力量」哪个是Futo啊…——骸骨（巨人灵庙H4）</td>
+			</tr>
+			<tr>
+				<td>F4、G4、H4-陷阱</td><td>在其他巨人像脚上放重物，会出刺</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b5c5d5">月之巨人殿（B5、C5、D5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B5、C5、D5-巨人像</td><td>留母派4人，从左往右依次为Abuto、Sakit、Ji、Ribu</td><td rowspan="3" class="tip"><ul class="tip">
+					<li>Abuto、Ji、Ribu、Sakit希望母亲住在这片土地。——石碑（巨人灵庙D3）</li>
+					<li>末子Sakit走上了他自己的道路。他在Ledo身上设下钥匙，在手中留下力量，陷入了沉睡。——石碑（巨人灵庙D5）</li>
+					<li>Ji在月夜开始了对大地的祈祷。——石碑（巨人灵庙E3）</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>C5-Sakit的十字架</td><td><ol>
+					<li>启动H4巨人像胸口的机关，左侧巨人像手中出现十字架</li>
+					<li>将E6天文盘设置为月亮在上，右侧巨人像跪下，跳到十字架处</li>
+				</ol></td>
+			</tr>
+			<tr>
+				<td>C5-Sakit</td><td>用宝石破坏十字架，进入BOSS战，击败后解锁D3里表门（通往巨人墓场）</td>
+			</tr>
+			<tr>
+				<td>B5、C5、D5-陷阱</td><td>在巨人像脚上放重物，会出刺</td><td class="tip">「Futo脚下有力量」哪个是Futo啊…——骸骨（巨人灵庙H4）</td>
+			</tr>
+			<tr>
+				<td><span class="hide">D5-壶</span></td><td><span class="hide">钻进右上角的壶，通往空之水源C5（单向），刚进去是死路，接到女神之塔的任务后进去打开排水口，路障解除</span></td><td class="tip"><span class="hide2">Migela与Futo创造的湖。向塔里注水的是Ribu。手指的前方所见之物。以及阿努纳奇移开视线之处。——石碑（女神之塔C7）</span></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e6">天文盘（E6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td rowspan="4">E6-天文盘</td><td>踩左右的小平台转动天文盘</td><td class="tip">这片土地底下有天文盘。从高处踩下那里的悬浮物，如此一来天就会动。——NPC（巨人灵庙D1）</td>
+			</tr>
+			<tr>
+				<td>设置为星星在上，G4巨人像倒下</td><td class="tip">Bado在满天繁星之日陷入了沉睡。——石碑（巨人灵庙F3）</td>
+			</tr>
+			<tr>
+				<td>设置为太阳在上，H4巨人像胸口出现机关</td><td class="tip">Ledo在太阳照耀之日战败，胸口破开一个大洞，陷入了长眠。——石碑（巨人灵庙D2）</td>
+			</tr>
+			<tr>
+				<td>设置为月亮在上，C5右侧巨人像跪下</td><td class="tip">Ji在月夜开始了对大地的祈祷。——石碑（巨人灵庙E3）</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>
