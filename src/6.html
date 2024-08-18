@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>灼热洞窟</h1>
+	<table class="table table-bordered table-img" style="width:645px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td></td><td colspan="2" onclick="tomark('b1c1')">厄喀德那之间</td><td></td><td rowspan="2" onclick="tomark('e1e2')">双子的足台</td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td></td><td></td><td></td><td rowspan="3" onclick="tomark('d2d3d4')">炎之竖穴</td><td colspan="2" onclick="tomark('f2g2')">巨人像</td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td onclick="tomark('a3')">力之门塔</td><td colspan="2">帕祖祖之间</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td></td><td></td><td onclick="tomark('c4')">光之石室</td><td rowspan="2" onclick="tomark('e4e5')">前室</td><td>拜殿</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td></td><td></td><td></td><td rowspan="2" onclick="tomark('d5d6')">至暗所</td><td colspan="2" onclick="tomark('f5g5')">冰之宝蔵</td>
+			</tr>
+			<tr>
+				<th class="table-light">6</th><td></td><td></td><td></td><td></td><td></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="map-info">
+	<h4>区域信息</h4>
+	<ul>
+		<li>初始时进入主区域，包含存档点，冰之斗篷可减轻岩浆伤害</li>
+		<li>锁链鞭房间（A3、B3、C3）在取得钩爪后进入</li>
+		<li>至暗所（D5、D6）从毁灭之塔进入</li>
+		<li>厄喀德那之间（B1、C1）从地下通路进入</li>
+	</ul>
+	<h4>出入口</h4>
+	<ul>
+		<li>F4：圣杯石碑</li>
+		<li>G2←→太阳神殿A2，伊西斯的前室</li>
+		<li>E1←→双连迷宫B5，伊迪古纳之间</li>
+		<li>D5←→毁灭之塔D6，巴别塔（击败巴哈姆特并取得铜镜后）</li>
+		<li>D6→死灭之碑G2，湿婆的十字壁画（击败Viy后）</li>
+		<li>E5←死灭之碑H2，湿婆的十字壁画</li>
+		<li>C1←→地上I3，音之谷</li>
+		<li>B1←→毁灭之塔F1，女娲的金字塔（击败巴风特后并取得铜镜后）</li>
+	</ul>
+	<h4>获得物</h4>
+	<ul>
+		<li>武器：<a href="javascript:tomark2('whip')">锁链鞭</a>、<a href="javascript:tomark2('flare')">照明弹</a></li>
+		<li>物品：<a href="javascript:tomark2('cape')">冰之斗篷</a></li>
+		<li>软件：<a href="javascript:tomark2('shop')">capstar</a>、<a href="javascript:tomark2('bunplus')">bunplus</a></li>
+		<li>其他：<a href="javascript:tomark2('map')">地图</a></li>
+		<li>宝箱：<a href="javascript:tomark2('chest1')">E2</a>、<a href="javascript:tomark2('chest2')">C1</a></li>
+	</ul>
+	<h4 id="f2g2">巨人像（F2、G2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>F2-陷阱</td><td>岩浆上的地板站一会儿就会碎</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e1e2">双子的足台（E1、E2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E2-陷阱</td><td>左边的宝珠是假的，去拿会掉到岩浆里</td><td></td>
+			</tr>
+			<tr id="chest1">
+				<td>E2-宝箱</td><td>在F2左边的岩浆中，击破左侧的墙</td><td></td>
+			</tr>
+			<tr id="map">
+				<td>E1-地图</td><td>攻击两个蛇雕像使其喷火</td><td class="tip">当蛇狂怒之时，它就会开启。——石碑（灼热洞窟E1）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d2d3d4">炎之竖穴（D2、D3、D4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D2-机关</td><td>放重物解除激光</td><td></td>
+			</tr>
+			<tr>
+				<td>D3-左侧通路</td><td>用诞生之印解封，之后从D2用钩爪抓墙跳进入</td><td class="tip">停在墙上。当火焰中断时，踢墙、向着更深处前进。——石碑（灼热洞窟D2）</td>
+			</tr>
+			<tr>
+				<td>D4-隐藏通路</td><td>击破左上角的墙进入C4</td><td class="tip">这片土地沉睡着两件武器。一件在帕祖祖守卫的前方。一件在炎之竖穴延伸至的光之石室内。——NPC（灼热洞窟D3）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a3">力之门塔（A3）</h4>
+	<p>进入方式：在D3用诞生之印解封后，从D2用钩爪抓墙跳进入，击败帕祖祖</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="whip">
+				<td>A3-锁链鞭</td><td>启动左右任意机关后，随巨石跳上顶端，放重物解锁（注意：失败后不能重置，只能读档）</td><td class="tip">乘上左即是左，乘上右即是右。弄错的话再也无法获得。——石碑（灼热洞窟C3）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c4">光之石室（C4）</h4>
+	<p>进入方式：击破D4左上角的墙</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="flare">
+				<td>C4-照明弹</td><td>完成推砖块谜题解锁（解法不唯一，以下为参考）<ul>
+					<li>最下方砖块（A）往左推下平台，不推到开关上</li>
+					<li>它上面那块（B）往左推下平台</li>
+					<li>A往左推到开关上，B叠在它上面</li>
+					<li>上方新出现的砖块推到左上开关</li>
+					<li>右下新出现的砖块推到房间左下角</li>
+					<li>右上左侧砖块推到下方中央开关</li>
+					<li>剩下两块推完即可</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e4e5">前室（E4、E5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="shop">
+				<td>E4-商店</td><td>可购买capstar（150G）、大地之枪（10枚20G）、重物（5枚10G）</td>
+			</tr>
+			<tr>
+				<td>E5-陷阱</td><td>石头的位置有陷阱门，会掉到岩浆里</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f5g5">冰之宝蔵（F5、G5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="bunplus">
+				<td>F5-bunplus</td><td>击破骸骨上方的墙</td><td class="tip">可恶…到此为止了吗。但是我买的软件可不会交给任何人。谁也不知道我把它藏在了这种地方。哇、哈、哈、哈、嘎唔。——骸骨（灼热洞窟F5）</td>
+			</tr>
+			<tr id="cape">
+				<td>G5-冰之斗篷</td><td>放重物后砖块落下，推砖块到开关上解锁</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d5d6">至暗所（D5、D6）</h4>
+	<p>进入方式：毁灭之塔D6里表门</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D6-Viy的十字架</td><td>在D5放重物开启通路，回到D4发现岩浆里多出机关，跳进去放重物解锁</td>
+			</tr>
+			<tr>
+				<td>D6-Viy</td><td>用宝石破坏十字架，进入BOSS战，击败后解锁下方通路（通往死灭之碑石棺处）、地上里表门（通往女神之塔）、太阳神殿石碑房间</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b1c1">厄喀德那之间（B1、C1）</h4>
+	<p>进入方式：从死灭之碑牛头马面右边的房间上去，穿过地下通路</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="chest2">
+				<td>C1-宝箱</td><td>击破梯子右上角的墙</td><td></td>
+			</tr>
+			<tr>
+				<td>B1-蛇的雕像</td><td><span class="hide">后期寻找灼热洞窟咒文时才能击破，放重物消除F2的巨人像</span></td><td class="tip"><ul class="tip">
+					<li><span class="hide2">伫立于针中的孤独的蛇。那是守护言灵的蛇。守护巨人留下的言灵。——壁画（女神之塔B7）</span></li>
+					<li><span class="hide2">耸立在灼热之地的巨人像。那里隐藏着灵魂的话语。等待开启之时吧。——石碑（太阳神殿B2）</span></li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>

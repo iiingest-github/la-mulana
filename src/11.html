@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>迷失之门</h1>
+	<table class="table table-bordered table-img" style="width:645px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td></td><td></td><td></td><td onclick="tomark('d1')">鸟之间</td><td onclick="tomark('e1')">生命的齿轮</td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td></td><td></td><td onclick="tomark('c2')">通向引导的门</td><td rowspan="2" onclick="tomark('d2d3')">祭品之穴</td><td colspan="2" onclick="tomark('e2f2')">孩子之间</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td colspan="2" onclick="tomark('a3b3')">蜥蜴之间</td><td rowspan="2" onclick="tomark('c3c4')">礼拜堂</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td onclick="tomark('a4')">妖精的祖庙</td><td></td><td onclick="tomark('d4')">蚩尤之间</td><td></td><td rowspan="2" onclick="tomark('f4f5')">空中圣池</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td></td><td></td><td colspan="3" onclick="tomark('c5d5e5')">愚者的迷廊</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">6</th><td></td><td></td><td></td><td></td><td></td><td colspan="2" onclick="tomark('f6g6')">始迷所</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="map-info">
+	<h4>区域信息</h4>
+	<ul>
+		<li>初始时从月光圣殿进入，完成各项谜题后到达存档点</li>
+		<li>右上角（D1、E1、E2、F2）从女神之塔进入，启动D1机关与主区域连通</li>
+	</ul>
+	<h4>出入口</h4>
+	<ul>
+		<li>C3：圣杯石碑</li>
+		<li>G6←→月光圣殿B1，伊甸的阶梯</li>
+		<li>C5←→巨人墓场B1，第1墓室</li>
+		<li>D3←→毁灭之塔A3，贤者的参道</li>
+		<li>C2←→引导之门A3，来自伊甸的门（击破双头蛇并取得铜镜后）</li>
+		<li>F2←→女神之塔C1，命之至道</li>
+	</ul>
+	<h4>获得物</h4>
+	<ul>
+		<li>物品：<a href="javascript:tomark2('npc')">胡椒粉</a>、<a href="javascript:tomark2('npc')">锚</a>、<a href="javascript:tomark2('clothes')">妖精之服</a>、<a href="javascript:tomark2('key')">无限钥匙</a>、<a href="javascript:tomark2('cog')">生命的齿轮</a></li>
+		<li>软件：<a href="javascript:tomark2('shop')">move</a></li>
+		<li>其他：<a href="javascript:tomark2('map')">地图</a></li>
+		<li>宝箱：<a href="javascript:tomark2('chest1')">A4</a>、<a href="javascript:tomark2('chest2')">F6</a></li>
+	</ul>
+	<h4 id="f6g6">始迷所（F6、G6）</h4>
+	<p>上方区域进入方式：F5的NPC房间下方传送门</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="chest2">
+				<td>F6-宝箱</td><td>击破梯子左侧的墙</td><td></td>
+			</tr>
+			<tr>
+				<td>F6、G6-上方谜题</td><td>在骸骨身上放重物解除激光，向右走传送到顶层，放重物启动第一个机关，在其落下前启动剩下五个，解锁C5通往上方的梯子</td><td class="tip">在一个消失前将所有的都消灭。那就是通往迷失深处的道路。——石碑（迷失之门G6）</td>
+			</tr>
+			<tr>
+				<td>F6-传送门</td><td>梯子右侧（在画面中左部）可以传送回F5的NPC房间下方</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c5d5e5">愚者的迷廊（C5、D5、E5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E5-左右谜题</td><td>在下方石碑处，调查右侧墙上的蓝光，正下方的地板会消失，进入落到上方石碑处</td><td class="tip">一名愚者因为是愚者，因而认为自己是贤者。炫耀浅陋的知识、以狭隘的心突进的愚蠢之人，毫不犹豫地走向了右边。一名愚者拥有睿智和知识，因而认为自己是愚者。没有深入思考、压抑自己的愚蠢之人，跟随大流走向了左边。真正的路只有一条。愿站在此处之人是真正的贤者。——石碑（迷失之门E5）</td>
+			</tr>
+			<tr>
+				<td>E5、F5-传送阵</td><td>传来传去都是这几个地方，注意F5左上角向右走会被传送到底层（需要耗费重物才能回来）</td><td class="tip">愚者会一直迷茫下去。——石碑（迷失之门F5）</td>
+			</tr>
+			<tr>
+				<td>E5-隐藏传送门</td><td>在四个壶处，打碎第一个壶会掉手里剑，在该位置按“下”进入下层，传送到F5右侧</td><td class="tip">只是彷徨的话迷茫不会消失。能实现你愿望的是跳入迷茫中的勇气。向唯一的掉落物跪下的勇气。——石碑（迷失之门F6）</td>
+			</tr>
+			<tr id="map">
+				<td>D5-地图</td><td>从C5左上角去C4放重物，解锁向下的梯子，到达宝箱后忽略它，继续爬下梯子，击破画面中央的墙解锁真宝箱</td><td></td>
+			</tr>
+			<tr>
+				<td>D5-陷阱</td><td>蓝色宝箱是假的，从四个空箱子前经过解锁，击打后爆炸</td><td></td>
+			</tr>
+			<tr>
+				<td>C5-通往上方的梯子</td><td>从隐藏传送门去F5→完成找财宝的任务→从F5的NPC房间下方去F6→放六个重物解锁梯子</td><td></td>
+			</tr>
+			<tr>
+				<td>C5-颠倒的门</td><td><span class="hide">解锁地狱圣堂时进入</span></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f4f5">空中圣池（F4、F5）</h4>
+	<p>F5右侧进入方式：E5的隐藏传送门</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E5、F5-传送阵</td><td>传来传去都是这几个地方，注意F5左上角向右走会被传送到底层（需要耗费重物才能回来）</td><td class="tip">愚者会一直迷茫下去。——石碑（迷失之门F5）</td>
+			</tr>
+			<tr id="npc">
+				<td>F4-找财宝的任务</td><td>和NPC对话获得胡椒粉，去引导之门C1对巨像使用获得财宝，回来交换获得锚</td><td class="tip"><ul class="tip">
+					<li>妖精似乎让什么巨大的东西把财宝吞进去了。让吞进去的东西吐出来就要用胡椒粉啊！——NPC（迷失之门F4）</li>
+					<li>还没找到财宝吗。要把胡椒粉洒在巨大的脸上啊。——NPC（迷失之门F4）</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>F4-机关</td><td>爬上F5顶层右侧梯子，穿墙跳过去放重物解锁，F5的砖块消失</td><td class="tip">依赖于所见之物、委身于道路的愚蠢之人啊。永远在迷宫中彷徨吧。——石碑（迷失之门F4）</td>
+			</tr>
+			<tr>
+				<td>F5-小人人偶</td><td>砖块消失后，和NPC对话获得</td><td></td>
+			</tr>
+			<tr>
+				<td>F5-传送门</td><td>砖块消失后，靠近NPC房间下层的右侧墙壁，传送至F6上方区域</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c3c4">礼拜堂（C3、C4）</h4>
+	<p>进入方式：在G6放六个重物解锁梯子</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C4-机关</td><td>放重物解锁C5拿地图的梯子</td>
+			</tr>
+			<tr>
+				<td>C4-砖块</td><td>击破砖块右侧的墙，推到梯子下方</td>
+			</tr>
+			<tr>
+				<td>C3-妖精机关</td><td>站在电梯上，击破电梯左侧有妖精图案的墙，放重物使A4出现妖精之服宝箱</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a3b3">蜥蜴之间（A3、B3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A3-上方砖块</td><td>将最左边的砖块推到右边，再站上去推掉右上方的砖块，继续向右走，放重物解锁梯子，此时C3的墙已经消除，可以到达存档点</td><td></td>
+			</tr>
+			<tr id="shop">
+				<td>A3-商店</td><td>可购买move（300G）、炸弹（10枚100G）、重物（5枚20G）</td><td></td>
+			</tr>
+			<tr>
+				<td>A3-隐藏通路</td><td>击破房间底部（中间偏左位置）进入A4</td><td></td>
+			</tr>
+			<tr>
+				<td>B3-蜥蜴人</td><td>接到三项任务后，击破中间透光的墙，推砖块露出梯子，等待蜥蜴人走到光处，E1出现机关</td><td class="tip">彷徨的蜥蜴舍弃了光，无法忍受而舍弃了光。舍弃的光是心之光，叹息自己的丑陋姿态而舍弃了光。如果把光还给蜥蜴，光柱就会消失吧。我会留下，我会传达，因为我知晓蜥蜴的心情。——石碑（迷失之门E2）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a4">妖精的祖庙（A4）</h4>
+	<p>进入方式：击破A3地板</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="clothes">
+				<td>A4-妖精之服</td><td>先在C3启动机关出现宝箱，再带钥匙妖精过来解锁</td><td class="tip">妖精能打开锁。——石碑（迷失之门A4）</td>
+			</tr>
+			<tr id="chest1">
+				<td>A4-宝箱</td><td>用武士刀击破右下角的墙</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c2">通向引导的门（C2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C2-上方梯子</td><td>通往G6（单向）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d2d3">祭品之穴（D2、D3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D2-陷阱门</td><td>左上角有陷阱门，进入放重物消除刺</td><td></td>
+			</tr>
+			<tr>
+				<td>D2-传送门</td><td>左侧密室可以传送到右侧密室，右下角会掉落至D3</td><td></td>
+			</tr>
+			<tr>
+				<td>D3-窄路</td><td>阅读石碑，去巨人灵庙任意有巨人像的房间使用小人人偶，回来后障碍解除</td><td class="tip"><ul class="tip">
+					<li>变成小人吧。只有小个子可以通过。——石碑（迷失之门D3）</li>
+					<li>母亲是如此伟大。连巨人看上去也如同小人。巨人是如此伟大。小小的你就如同小人一般。——石碑（巨人灵庙D1）</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>D3-机关</td><td>用诞生之印解封，出现梯子，放重物降下盖子，阻止女幽灵落下</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d4">蚩尤之间（D4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D4-蚩尤</td><td>他会通过女幽灵补充生命，先阻止女幽灵掉落再来打</td><td class="tip">吸取纯洁少女的生命，获得永远之力的魔物，蚩尤。不可从祭品之穴掉落。——石碑（引导之门A3）</td>
+			</tr>
+			<tr id="key">
+				<td>D4-无限钥匙</td><td>击败蚩尤解锁，注意头顶平台会掉落（穆拉纳特产3）</td><td></td>
+			</tr>
+			<tr>
+				<td><span class="hide">D4-开发者duplex</span></td><td><span class="hide">击破刺右侧的墙，出现房间，装备miracle+mirai见到开发者</span></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d1">鸟之间（D1）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D1-手</td><td>击破房间顶上的手，D2出现梯子，连通主区域和右上区域</td><td class="tip">巨大的鸟啊。请赐予慈悲吧。若是打碎那手的话，慈悲会降临吗。——石碑（毁灭之塔D4）</td>
+			</tr>
+			<tr>
+				<td>D1-隐藏通路</td><td>击破右上角的墙进入E1</td><td></td>
+			</tr>
+			<tr>
+				<td>D1-人面鸟</td><td>接到三项任务后，击败小BOSS人面鸟，E1出现机关</td><td class="tip">悲伤的鸟施了魔法。背着母亲施了魔法。为了不再犯同样的错误，为了不再产生同样的悲伤。巨大的鸟施了魔法。如果鸟死了，魔法就会消失吧，光柱就会消失吧。我会留下，我会传达，怀着和人面鸟同样的心情。——石碑（迷失之门E2）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e1">生命的齿轮（E1）</h4>
+	<p>进入方式：击破D1右上角的墙</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="cog">
+				<td>E1-生命的齿轮</td><td>和妖精对话后，阅读E2的三块石碑开启任务，完成后出现机关，放重物解锁<ul>
+					<li>D1，击败小BOSS人面鸟</li>
+					<li>B3，击破中间透光的墙，推砖块露出梯子，等待蜥蜴人走到光处</li>
+					<li>F2，使用时之灯，一次性打碎所有壶（建议有手镯）</li>
+				</ul></td><td class="tip"><ul class="tip">
+					<li>如果鸟死了，魔法就会消失吧，光柱就会消失吧。——石碑（迷失之门E2）</li>
+					<li>如果把光还给蜥蜴，光柱就会消失吧。——石碑（迷失之门E2）</li>
+					<li>如果宝物消失，一次性全部消失的话，孩子的心情就会悲伤。——石碑（迷失之门E2）</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>E1-齿轮机关</td><td>获得生命的齿轮后，在原来妖精房间位置的石碑上使用，产声之碑中出现泥人</td><td class="tip"><ul class="tip">
+					<li>沉睡在这片土地的伟大宝物。那就是产生生命的装置。我等第6子就是从此处诞生。并为了母亲的愿望而启程。——石碑（迷失之门D2）</li>
+					<li>※原文写成第7子，应该是笔误</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e2f2">孩子之间（E2、F2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E2-三块石碑</td><td>在E1和妖精对话后出现石碑，阅读三块石碑开启任务</td><td></td>
+			</tr>
+			<tr>
+				<td>F2-壶</td><td>接到三项任务后，使用时之灯，一次性打碎所有壶（建议有手镯），E1出现机关</td><td class="tip">发光的柱子是孩子的心情，跳舞的孩子的灿烂心情。灿烂心情的原因，是不可思议的宝物。十分脆弱又十分坚固，非常美妙的宝物。如果宝物消失，一次性全部消失的话，孩子的心情就会悲伤。我会留下，我会传达，为了留下孩子的心。——石碑（迷失之门E2）</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>

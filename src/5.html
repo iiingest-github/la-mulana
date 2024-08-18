@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>空之水源</h1>
+	<table class="table table-bordered table-img" style="width:465px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td></td><td></td><td></td><td rowspan="5" onclick="tomark('d1d2d3d4d5')">瀑布参堂</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td></td><td></td><td onclick="tomark('c2')">至圣所</td><td rowspan="2" onclick="tomark('e2e3')">起始之间</td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td rowspan="3" onclick="tomark('a4a5a6')">俄安内的壁画</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td></td><td onclick="tomark('c5')">圣池</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">6</th><td colspan="2" onclick="tomark('b6c6')">女神的水瓶</td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">7</th><td></td><td rowspan="2" onclick="tomark('b7b8')">镜之瀑布</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">8</th><td></td><td rowspan="2" onclick="tomark('c8c9')">俄安内的瀑布</td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">9</th><td></td><td rowspan="2" onclick="tomark('b9b10')">阿努纳奇的石槽</td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">10</th><td></td><td></td><td></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="map-info">
+	<h4>区域信息</h4>
+	<ul>
+		<li>初始时所有房间可去，过瀑布需要有头盔，鱼水晶可免除水中伤害</li>
+	</ul>
+	<h4>出入口</h4>
+	<ul>
+		<li>B7：圣杯石碑</li>
+		<li>A6←→引导之门G2，勇气之间</li>
+		<li>B10→太阳神殿F3，冥界大列柱室右翼（升起盖子后）</li>
+		<li>C2→地上L1，巴哈伦的瀑布（击败巴哈姆特后）</li>
+		<li><span class="hide">C5←巨人灵庙D5，月之巨人殿（刚进来是死路，完成女神之塔的任务才开放）</span></li>
+	</ul>
+	<h4>获得物</h4>
+	<ul>
+		<li>武器：<a href="javascript:tomark2('caltrops')">铁蒺藜</a></li>
+		<li>物品：<a href="javascript:tomark2('scalesphere')">鱼水晶</a>、<a href="javascript:tomark2('glove')">手套</a>、<a href="javascript:tomark2('shop')" class="hide3">海螺</a></li>
+		<li>软件：<a href="javascript:tomark2('shop')" class="hide3">randc</a>、<a href="javascript:tomark2('shop')" class="hide3">guild</a></li>
+		<li>其他：<a href="javascript:tomark2('map')">地图</a>、<a href="javascript:tomark2('seal')">起始之印</a>、<a href="javascript:tomark2('orb')">生命宝珠</a>、<a href="javascript:tomark2('jewel')">十字架宝石</a></li>
+		<li>宝箱：<a href="javascript:tomark2('chest')">B9</a></li>
+	</ul>
+	<h4 id="a4a5a6">俄安内的壁画（A4、A5、A6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="orb">
+				<td>A4-生命宝珠</td><td>用诞生之印激活梯子，消灭全部敌人后解锁</td>
+			</tr>
+			<tr>
+				<td>A5-贤者Giltoriyo</td><td><span class="hide">用陶笛和他对话，解锁无限回廊E2梯子、毁灭之塔F1梯子（存疑）</span></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b6c6">女神的水瓶（B6、C6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="caltrops">
+				<td>B6-铁蒺藜</td><td>踩右下方的石板至最低处，放重物解锁</td>
+			</tr>
+			<tr id="map">
+				<td>C6-地图</td><td>放重物解锁</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c5">圣池（C5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C5-圣池</td><td>未取得鱼水晶的情况下，必须穿过池子，去对面登顶取得鱼水晶</td><td class="tip">不要畏惧水。逆水而上登顶者会得到水的回应。越过神圣的水池前进吧。——石碑（引导之门G2）</td>
+			</tr>
+			<tr id="glove">
+				<td>C5-手套</td><td>在C2开启水门后解锁</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d1d2d3d4d5">瀑布参堂（D1、D2、D3、D4、D5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="shop">
+				<td>D4-商店</td><td><ul>
+					<li>在C8打飞鱼人后，用起始之印解封，可购买重物（5枚10G）、手里剑（10枚10G）、铁蒺藜（10枚30G）</li>
+					<li><span class="hide">带钥匙妖精过来，商店会爆炸，再次进入可购买海螺（50G）、guild（60G）、randc（300G）</span></li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>D2-齿轮</td><td>在C2开启水门后，击打左下角齿轮，C2水位升高</td>
+			</tr>
+			<tr id="scalesphere">
+				<td>D1-鱼水晶</td><td>放重物解锁</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e2e3">起始之间（E2、E3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E2-陷阱</td><td>一些平台会塌，位置有标注</td>
+			</tr>
+			<tr id="seal">
+				<td>E2-起始之印</td><td>在E3击败小BOSS后解锁</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c2">至圣所（C2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C2-水门</td><td>用起始之印解封后，踩中间的平台到最低处出现开关，放重物开启水门</td><td></td>
+			</tr>
+			<tr>
+				<td>C2-水位</td><td>开启水门后，在D2击打左下角齿轮，水位升高，小船上浮</td><td></td>
+			</tr>
+			<tr>
+				<td>C2-巴哈姆特的十字架</td><td>开启水门后，在C9放重物解锁</td><td></td>
+			</tr>
+			<tr>
+				<td>C2-巴哈姆特</td><td>升高水位并解锁十字架后，用宝石破坏十字架，进入BOSS战，击败后解锁左侧通路（通往地上）、毁灭之塔里表门（通往Viy所在房间）</td><td class="tip">乘船出发吧。巴哈姆特沉睡之处就在那里。红色的光辉在鱼主人手中。——石碑（空之水源B7）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b7b8">镜之瀑布（B7、B8）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B8-NPC的房间</td><td>击破水池左下角的墙（在画面中部），从B7石碑处向下爬梯子到达</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c8c9">俄安内的瀑布（C8、C9）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="jewel">
+				<td>C8-十字架宝石</td><td>打飞水槽里的鱼人解锁</td><td class="tip">乘船出发吧。巴哈姆特沉睡之处就在那里。红色的光辉在鱼主人手中。——石碑（空之水源B7）</td>
+			</tr>
+			<tr>
+				<td>C8-机关</td><td>放重物解除激光</td><td></td>
+			</tr>
+			<tr>
+				<td>C9-机关</td><td>在C2开启水门后，放重物解锁C2巴哈姆特的十字架</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b9b10">阿努纳奇的石槽（B9、B10）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="chest">
+				<td>B9-宝箱</td><td>从C9左上角梯子左侧过去，击破墙解锁</td><td></td>
+			</tr>
+			<tr>
+				<td>B9、B10-盖子</td><td>击打B10左上角的长条，再击打B9左下角的绞车，盖子升起，水被注入太阳神殿</td><td class="tip">太阳之上是空之水源。——石碑（空之水源C9）</td>
+			</tr>
+			<tr>
+				<td><span class="hide">B10-隐藏通路</span></td><td><span class="hide">右上角平台右侧通向C5水槽，进去是死路，接到女神之塔的任务后进去打开排水口</span></td><td class="tip"><span class="hide2">Migela与Futo创造的湖。向塔里注水的是Ribu。手指的前方所见之物。以及阿努纳奇移开视线之处。——石碑（女神之塔C7）</span></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>
