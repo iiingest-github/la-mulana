@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>引导之门</h1>
+	<table class="table table-bordered table-img" style="width:645px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td></td><td></td><td colspan="2" onclick="tomark('c1d1')">列柱门</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td></td><td></td><td></td><td colspan="2" onclick="tomark('d2e2')">十字架的天坛</td><td colspan="2" onclick="tomark('f2g2')">勇气之间</td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td onclick="tomark('a3')">来自伊甸的门</td><td rowspan="3" onclick="tomark('b3b4b5')">圣杯的竖穴</td><td colspan="2" onclick="tomark('c3d3')">空中天廊</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td></td><td onclick="tomark('c4')">巨颜门</td><td onclick="tomark('d4')">强者之间</td><td rowspan="2" onclick="tomark('e4e5')">蛇的至圣所</td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td></td><td onclick="tomark('c5')">鱼人碑</td><td onclick="tomark('d5')">光辉的屏风岩</td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">6</th><td colspan="2" onclick="tomark('a6b6')">时代之碑</td><td></td><td></td><td></td><td></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="map-info">
+	<h4>区域信息</h4>
+	<ul>
+		<li>初始时大部分房间可去，建议先去拿圣杯开启传送</li>
+		<li>BOSS房间（E5）在完成上方推砖块后进入</li>
+		<li>左上房间（A3）从迷失之门进入</li>
+	</ul>
+	<h4>出入口</h4>
+	<ul>
+		<li>D2：圣杯石碑</li>
+		<li>C1←→地上I5，遗迹入口</li>
+		<li>G2←→空之水源A6，俄安内的壁画</li>
+		<li>A6←→巨人灵庙B1，终堂</li>
+		<li>D5←→太阳神殿B1，望楼</li>
+		<li>A3←→迷失之门C2，通向引导的门（击败双头蛇并取得铜镜后）</li>
+	</ul>
+	<h4>获得物</h4>
+	<ul>
+		<li>武器：<a href="javascript:tomark2('shuriken')">手里剑</a></li>
+		<li>物品：<a href="javascript:tomark2('grail')">圣杯</a>、<a href="javascript:tomark2('crucifix')">十字架</a>、<a href="javascript:tomark2('treasures')" class="hide3">财宝</a></li>
+		<li>软件：<a href="javascript:tomark2('shop')">guild</a>、<a href="javascript:tomark2('yagostr')">yagostr</a></li>
+		<li>其他：<a href="javascript:tomark2('map')">地图</a>、<a href="javascript:tomark2('orb')">生命宝珠</a>、<a href="javascript:tomark2('jewel')">十字架宝石</a></li>
+		<li>宝箱：<a href="javascript:tomark2('chest1')">G2</a>、<a href="javascript:tomark2('chest2')">C4</a></li>
+	</ul>
+	<h4 id="c1d1">列柱门（C1、D1）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="treasures">
+				<td><span class="hide">C1-财宝</span></td><td><span class="hide">在迷失之门接到NPC的任务后，来这里对巨像使用胡椒粉</span></td><td class="tip"><ul class="tip">
+					<li><span class="hide2">妖精似乎让什么巨大的东西把财宝吞进去了。让吞进去的东西吐出来就要用胡椒粉啊！——NPC（迷失之门F4）</span></li>
+					<li><span class="hide2">还没找到财宝吗。要把胡椒粉洒在巨大的脸上啊。——NPC（迷失之门F4）</span></li>
+				</ul></td>
+			</tr>
+			<tr id="orb">
+				<td>D1-生命宝珠</td><td>踩左上角平台机关解锁</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d2e2">十字架的天坛（D2、E2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="crucifix">
+				<td>E2-十字架</td><td>用经营之印解封，再用照明弹点亮上方的三支火把</td><td class="tip">对天空点亮三束光。——石碑（引导之门E2）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f2g2">勇气之间（F2、G2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="shuriken">
+				<td>F2-手里剑</td><td>跳进刺里，放重物解锁</td><td class="tip"><ul class="tip">
+					<li>勇敢之人啊。去取得力量吧。你若渴望力量，就拿出你的勇气。——石碑（引导之门F2）</li>
+					<li>似乎是勇敢的人可以获得武器…但跳进这样的针里会死吧。——骸骨（引导之门F2）</li>
+				</ul></td>
+			</tr>
+			<tr id="chest1">
+				<td>G2-宝箱</td><td>放重物解锁，之后从C3顶上的梯子进入</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a3">来自伊甸的门（A3）</h4>
+	<p>上方区域进入方式：从迷失之门过来解锁梯子</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A3-陷阱</td><td>直接放重物启动机关，会出刺</td><td class="tip">为什么…不管试多少次宝箱还是不开。——骸骨（引导之门A3）</td>
+			</tr>
+			<tr id="yagostr">
+				<td>A3-yagostr</td><td>从迷失之门回来后，踩上方平台的机关关闭陷阱，再放重物解锁</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b3b4b5">圣杯的竖穴（B3、B4、B5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B3-梯子</td><td>从迷失之门回来后，踩A3上方平台的机关激活梯子</td><td></td>
+			</tr>
+			<tr>
+				<td>B3、B4、B5-电梯</td><td>在C4击打巨像嘴处石块直至消失，出现电梯</td><td class="tip">用嘴衔住的相连之物。一人咽下另一人便会吐出。——石碑（引导之门C4）</td>
+			</tr>
+			<tr>
+				<td>B3-砖块</td><td>推砖块到开关上，出现新机关，启动后D3出现新机关</td><td></td>
+			</tr>
+			<tr id="grail">
+				<td>B4-圣杯</td><td>从E4隐藏通路过来，推砖块到开关上解锁</td><td></td>
+			</tr>
+			<tr>
+				<td>B4-机关</td><td>放重物解除NPC房间门口的激光</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c3d3">空中天廊（C3、D3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="map">
+				<td>C3-地图</td><td>放重物解锁</td><td></td>
+			</tr>
+			<tr>
+				<td>C3-梯子</td><td>上方的梯子通往G2宝箱处</td><td></td>
+			</tr>
+			<tr>
+				<td>C3、D3-隐形通路</td><td>房间上方有看不见的路，可以从B3右上角进入，注意两端石像的位置是空的</td><td class="tip" rowspan="2"><ul class="tip">
+					<li>这片土地的十字架，在对视的脸的道路前方。——NPC（引导之门B4）</li>
+					<li>对视的脸就在空中天廊！我找到看不见的路了！但是太得意掉下来了…——骸骨（引导之门D3）</li>
+					<li>※对视的脸即隐形通路两端的石像</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>D3-机关</td><td>启动B3机关后出现，沿隐形通路过来，解锁E5双头蛇的十字架</td>
+			</tr>
+			<tr>
+				<td>D3-陷阱</td><td>放重物启动中间的机关，会掉石头</td><td class="tip">竟然中了这么明显的陷阱…——骸骨（引导之门D3）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c4">巨颜门（C4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C4-陷阱</td><td>从正中间掉下去，会出刺</td><td></td>
+			</tr>
+			<tr>
+				<td>C4-石块</td><td>击打巨像嘴处石块直至消失，在B3、B4、B5出现电梯</td><td class="tip">用嘴衔住的相连之物。一人咽下另一人便会吐出。——石碑（引导之门C4）</td>
+			</tr>
+			<tr id="chest2">
+				<td>C4-宝箱</td><td>从D4过来放重物解锁，再从C4陷阱门跳至宝箱处（二段跳或垂直起跳）</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c5">鱼人碑（C5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C5-陷阱</td><td>从高处掉到中间地板上，会出刺</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d4">强者之间（D4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D4-陷阱</td><td>从上方通道经过时会掉下一堵墙，小心被压死</td><td></td>
+			</tr>
+			<tr>
+				<td>D4-陷阱门</td><td>左下四个雕像上方有陷阱门，通过此门可跳至C4宝箱处</td><td></td>
+			</tr>
+			<tr>
+				<td>D4-红骷髅</td><td>击败红骷髅，E4墙里的砖块会掉下</td><td class="tip">「两名强者」「寂静的孤独」「到达高处的石头」强者指的是什么？——骸骨（引导之门C4）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a6b6">时代之碑（A6、B6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A6-四块石碑</td><td>按左上→左下→右上→右下的顺序击破，解锁B6梯子</td><td class="tip">「第1太阳时代被洪水、第2太阳时代被风神、第3太阳时代被火神、第4太阳时代被血与火之雨所毁灭。」写着和玛雅预言书相同的东西，与这片遗迹有关吗？——骸骨（引导之门B6）</td>
+			</tr>
+			<tr>
+				<td>B6-机关</td><td>A6击破石碑后，爬上梯子放重物，D5出现机关，去解锁获得十字架宝石</td><td class="tip">宝石在光辉的屏风岩脚边。——NPC（引导之门B4）</td>
+			</tr>
+			<tr id="shop">
+				<td>B6-商店</td><td>在A6放重物解锁，可购买手里剑（10枚10G）、guild（60G）、重物（5枚10G）</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d5">光辉的屏风岩（D5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="jewel">
+				<td>D5-十字架宝石</td><td>A6击破石碑→B6启动机关→D5启动机关</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e4e5">蛇的至圣所（E4、E5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E4-隐藏通路</td><td>右下角骸骨右侧可通往B4</td><td class="tip">这是我找到的近路！这片遗迹似乎不可思议地连接在一起…——骸骨（引导之门E4）</td>
+			</tr>
+			<tr>
+				<td>E4-砖块</td><td>击败D4红骷髅后，墙里的砖块会掉下，推砖块解谜（解法：把三块都从最长的平台往右推下去，其中两块垫脚，最后一块落到开关上），出现机关，解锁通往E5的路</td><td></td>
+			</tr>
+			<tr>
+				<td>E5-双头蛇的十字架</td><td>B3推砖块→B3启动机关→沿着隐形通路去D3→D3启动机关</td><td>
+			</tr>
+			<tr>
+				<td>E5-双头蛇</td><td>用宝石破坏十字架，进入BOSS战，击败后解锁A3里表门（通往迷失之门）</td><td class="tip">这片土地沉睡着8个灵魂。灵魂是保护这片土地的守卫。灵魂沉睡的十字架可以用红色的光辉打破。灵魂的苏醒就在那时。——NPC（引导之门B4）</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>
