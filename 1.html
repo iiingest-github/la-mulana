@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>地上</h1>
+	<table class="table table-bordered table-img" style="width:1095px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td rowspan="3" onclick="tomark('i1i2i3')">音之谷</td><td rowspan="2" onclick="tomark('j1j2')">空见之丘</td><td rowspan="2" colspan="2" onclick="tomark('k1k2l1l2')">巴哈伦的瀑布</td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>山麓</td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td colspan="3" onclick="tomark('a3b3c3')">祭坛之丘</td><td rowspan="2" onclick="tomark('d3d4')">祭坛前之崖</td><td rowspan="2">村外</td><td></td><td>山麓</td><td rowspan="2" onclick="tomark('h3h4')">启程之门</td><td>地下通路</td><td colspan="2" onclick="tomark('k3l3')">女神的瀑布潭</td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td></td><td></td><td></td><td colspan="2" onclick="tomark('f4g4')">启程之村</td><td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>母亲的割门</td><td>遗迹入口</td><td></td><td></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="map-info">
+	<h4>区域信息</h4>
+	<ul>
+		<li>初始时大部分房间可去，但是要先跟长老对话，否则遗迹、商店不能进</li>
+		<li>瀑布区域（K、L）建议得到鱼水晶再去</li>
+		<li>祭坛（A3）在得到蛇之杖击败阿尔戈斯后进入</li>
+		<li>地下通路（I3、J3）在死灭之碑击败牛头马面后，从右侧房间进入</li>
+	</ul>
+	<h4>出入口</h4>
+	<ul>
+		<li>G4：圣杯石碑</li>
+		<li>I5←→引导之门C1，列柱门</li>
+		<li>L1←空之水源C2，至圣所（击败巴哈姆特后）</li>
+		<li>K3←→女神之塔B9，乌尔德之泉（击败Viy并取得铜镜后）</li>
+		<li>I3←→灼热洞窟C1，厄喀德那之间</li>
+		<li>J3←→死灭之碑F1，牛头马面之门</li>
+	</ul>
+	<h4>获得物</h4>
+	<ul>
+		<li>武器：<a href="javascript:tomark2('shop3')">手枪</a>、<a href="javascript:tomark2('shop3')">小圆盾</a></li>
+		<li>物品：<a href="javascript:tomark2('shop2')">手持扫描仪</a>、<a href="javascript:tomark2('shop3')">防水罩</a>、<a href="javascript:tomark2('horn')">海螺</a>、<a href="javascript:tomark2('feather')">羽毛</a>、<a href="javascript:tomark2('shop1')">MobileSuperX2</a>、<a href="javascript:tomark2('xelpud')" class="hide3">穆拉纳护身符</a></li>
+		<li>软件：<a href="javascript:tomark2('xelpud')">xmailer</a>、<a href="javascript:tomark2('shop1')">reader</a>、<a href="javascript:tomark2('shop1')">yagomap</a>、<a href="javascript:tomark2('deathv')">deathv</a>、<a href="javascript:tomark2('mekuri')">mekuri</a></li>
+		<li>其他：<a href="javascript:tomark2('map')">地图</a>、<a href="javascript:tomark2('seal')">诞生之印</a>、<a href="javascript:tomark2('orb')">生命宝珠</a></li>
+		<li>宝箱：<a href="javascript:tomark2('chest1')">D3</a>、<a href="javascript:tomark2('chest2')">J2</a>、<a href="javascript:tomark2('chest3')">K1</a></li>
+	</ul>
+	<h4 id="a3b3c3">祭坛之丘（A3、B3、C3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B3-阿尔戈斯</td><td>装备蛇之杖才能打，否则是无敌的</td><td class="tip">青色身体上长有无数眼睛的阿尔戈斯。传说他似乎怕蛇之杖。——NPC（地上C3）</td>
+			</tr>
+			<tr id="feather">
+				<td>A3-羽毛</td><td>击败阿尔戈斯后解锁</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d3d4">祭坛前之崖（D3、D4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="chest1">
+				<td>D3-宝箱</td><td>用经营之印解封</td>
+			</tr>
+			<tr>
+				<td>D4-温泉</td><td>回复体力（本游戏回复方式共三种：泡温泉、攒蓝条、召唤回复妖精）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f4g4">启程之村（F4、G4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="shop1">
+				<td>F4-上方商店</td><td>可购买重物（5枚10G）、reader（50G）、yagomap（20G）、MobileSuperX2（击败四名守卫后解锁，250G）</td>
+			</tr>
+			<tr id="xelpud">
+				<td>G4-长老Xelpud</td><td><ul>
+					<li>初始时对话，获得xmailer，开启商店和遗迹入口</li>
+					<li><span class="hide">得到护身符后对话，去寻找父亲的日记</span></li>
+					<li><span class="hide">消除圣母之祠的墙后，从E2回来对话，他会过去帮忙</span></li>
+					<li><span class="hide">得到日记后对话，获得穆拉纳护身符</span></li>
+				</ul></td>
+			</tr>
+			<tr id="shop2">
+				<td>G4-右侧商店</td><td>可购买手持扫描仪（10G）、子弹（1盒400G）、手里剑（10枚10G）</td>
+			</tr>
+			<tr id="shop3">
+				<td>G4-下方商店</td><td>可购买小圆盾（10G）、防水罩（50G）、手枪（100G）</td>
+			</tr>
+			<tr>
+				<td>G4-圣杯石碑</td><td>初始时只能手动存档，获得圣杯后可传送和触碰存档（其他地区相同，不再说明）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="h3h4">启程之门（H3、H4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>H3-机关</td><td>放重物开启向下的路</td>
+			</tr>
+			<tr>
+				<td>H4-近路</td><td>秃鹫下方的墙可以从右侧击破</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="i1i2i3">音之谷（I1、I2、I3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="horn">
+				<td>I2-海螺</td><td>放重物解锁</td><td class="tip">试着去拿海螺怎么样？是在遗迹入口之上、名为音之谷的地方的宝箱，有重物的话就能打开了。——长老邮件01</td>
+			</tr>
+			<tr id="map">
+				<td>I3-地图</td><td>用手持扫描仪调查遗骨</td><td class="tip">说起来以前把村子周围的地图交给了一个男的，那家伙还没回来，说不定在哪儿死了。调查遗骨找找地图吧。——长老邮件02</td>
+			</tr>
+			<tr id="deathv">
+				<td>I3-deathv</td><td>跳过长老的雕像，击破后面的墙</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="j1j2">空见之丘（J1、J2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="chest2">
+				<td>J2-宝箱</td><td>在地下通路中，用炸弹炸开梯子右上方的墙</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="k1k2l1l2">巴哈伦的瀑布（K1、K2、L1、L2）</h4>
+	<p>提示：在水里会掉血，建议得到鱼水晶再来</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="chest3">
+				<td>K1-宝箱</td><td>在水中击破左侧的墙</td>
+			</tr>
+			<tr id="mekuri">
+				<td>K2-mekuri</td><td>击破梯子左侧的墙发现帐篷，从上方平台或L2平台二段跳进入，也可从上方平台垂直起跳进入</td>
+			</tr>
+			<tr>
+				<td>L1-瀑布右上方</td><td>击败巴哈姆特后，可以从空之水源过来，但是从这边过不去</td>
+			</tr>
+			<tr id="seal">
+				<td>L2-诞生之印</td><td>用起始之印解封</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="k3l3">女神的瀑布潭（K3、L3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>K3-里表门</td><td>通往女神之塔（击败Viy并取得铜镜后）</td>
+			</tr>
+			<tr>
+				<td>L3-陷阱</td><td>击破水潭右侧的墙，出现一群蝙蝠</td>
+			</tr>
+			<tr id="orb">
+				<td>L3-生命宝珠</td><td>击破蝙蝠陷阱上方的墙<ul>
+					<li>方式一：打完巴哈姆特，水里会多出小船，站在船上起跳</li>
+					<li>方式二：不打巴哈姆特，从蝙蝠陷阱的平台起跳，用手里剑击破墙，再从L2平台跳至宝箱处</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>
