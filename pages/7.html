@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>死灭之碑</h1>
+	<table class="table table-bordered table-img" style="width:825px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td></td><td></td><td colspan="2" onclick="tomark('c1d1')">至圣参道</td><td colspan="2" onclick="tomark('e1f1')">牛头马面之门</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td colspan="2" onclick="tomark('a2b2')">起动的壁画</td><td></td><td></td><td></td><td></td><td colspan="2" onclick="tomark('g2h2')">湿婆的十字壁画</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td></td><td colspan="2" onclick="tomark('b3c3')">暗之参道</td><td></td><td></td><td></td><td></td><td onclick="tomark('h3')">前室</td><td onclick="tomark('i3')">帕伦克之棺</td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td></td><td></td><td colspan="2" onclick="tomark('c4d4')">言灵的壁画</td><td onclick="tomark('e4i5')">侧道</td><td rowspan="2" onclick="tomark('f4f5')">光之壁画</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td></td><td></td><td></td><td></td><td></td><td onclick="tomark('g5')">经营之道</td><td onclick="tomark('h5')">经营之池</td><td onclick="tomark('e4i5')">侧道</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="map-info">
+	<h4>区域信息</h4>
+	<ul>
+		<li>初始时从太阳神殿进入，可用照明弹照明，后期在F4可启动永久照明</li>
+		<li>右上角（G2、H2、H3、I3）在击败Viy后，从灼热洞窟进入</li>
+		<li>顶层（1）在击败帕伦克后，从产声之碑里表门进入</li>
+	</ul>
+	<h4>出入口</h4>
+	<ul>
+		<li>F5：圣杯石碑</li>
+		<li>A2←→太阳神殿G4，镜之祭坛</li>
+		<li><span class="hide">G5←→时间之门D11，通向天的竖穴</span></li>
+		<li>G2←灼热洞窟D6，至暗所（击败Viy后）</li>
+		<li>H2→灼热洞窟E5，前室</li>
+		<li>H5←→圣母之祠E6，巴哈姆特之间（刚进去是死路，从上面打通）</li>
+		<li>C1←→产声之碑D2，妙音天女之间（击败帕伦克并取得铜镜后）</li>
+		<li>F1←→地上J3，地下通路</li>
+	</ul>
+	<h4>获得物</h4>
+	<ul>
+		<li>武器：<a href="javascript:tomark2('chakram')">轮刃</a></li>
+		<li>软件：<a href="javascript:tomark2('mantra')" class="hide3">mantra</a></li>
+		<li>其他：<a href="javascript:tomark2('map')">地图</a>、<a href="javascript:tomark2('seal')">经营之印</a>、<a href="javascript:tomark2('orb')">生命宝珠</a></li>
+		<li>宝箱：<a href="javascript:tomark2('chest')">B3</a></li>
+	</ul>
+	<h4 id="a2b2">起动的壁画（A2、B2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A2-两个入口</td><td>走上方可以拿生命宝珠，走下方可以解锁铜镜、拿地图和轮刃，两条路在E4汇合，也可以倒着走（所以走哪个入口都无所谓）</td><td></td>
+			</tr>
+			<tr>
+				<td>A2-照明石</td><td>使用照明弹点亮石碑上方照明石，可短暂照明（其他房间相同，不再说明）</td><td class="tip"><ul class="tip">
+					<li>在此处点亮灯光。——石碑（死灭之碑A2）</li>
+					<li>好像有个没有灯、一片漆黑的房间。在各处应该有用来照明的地方。有没有什么像是能用入手的武器点火的东西呢？——长老邮件23</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>A2-圆盘</td><td>跳起来击打圆盘状物体，回到太阳神殿G4解锁铜镜</td><td class="tip">去取得镜子吧。镜子能映照出遗迹的真相。所有的房间都是表里一体。进入黑暗、向下、行走、爬上、跳起击打。——NPC（空之水源B8）</td>
+			</tr>
+			<tr>
+				<td><span class="hide">B2-飞行器壁画</span></td><td><span class="hide">启动G2开关后出现，使用袋状钥匙，解锁I3帕伦克的十字架</span></td><td class="tip"><ul class="tip">
+					<li><span class="hide2">两张壁画所隐含的谜。它就隐藏在由小事物唤起的大事物之中。手持黄金钥匙挑战它吧。——NPC（死灭之碑I3）</span></li>
+					<li><span class="hide2">※小事物和大事物分别指B2和I3的飞行器壁画</span></li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b3c3">暗之参道（B3、C3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="chest">
+				<td>B3-宝箱</td><td>击破右上梯子下方的石头</td>
+			</tr>
+			<tr id="map">
+				<td>B3-地图</td><td>放重物解锁（机关在左下角的刺里）</td>
+			</tr>
+			<tr id="orb">
+				<td>C3-生命宝珠</td><td>踩地板机关解锁（机关在右上角的刺后面）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c4d4">言灵的壁画（C4、D4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="chakram">
+				<td>C4-轮刃</td><td>击败小BOSS后解锁</td><td></td>
+			</tr>
+			<tr id="mantra">
+				<td><span class="hide">D4-mantra</span></td><td><span class="hide">在E1放置勾玉后，壁画发光，用torude扫描获得</span></td><td class="tip"><ul class="tip">
+					<li><span class="hide2">有将知识写于墙上的种族。那份知识在机械之箱内，成为假想的有识之士活动。若是有能读懂那壁画的有识之士就会苏醒吧。——NPC（毁灭之塔F5）</span></li>
+					<li><span class="hide2">※机械之箱=电脑，有识之士=软件/信息，读壁画的有识之士=torude</span></li>
+					<li><span class="hide2">嵌入墙中的智慧。在地狱守门人看守的宫殿前举起证明吧。黑暗中将会浮现出光的文字。那份智慧正是掌管咒文的假想的有识之士。——石碑（迷失之门E2）</span></li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e4i5">侧道（E4、I5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C4、I5-梯子</td><td>E4右下梯子与I5右上梯子相通</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f4f5">光之壁画（F4、F5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="seal">
+				<td>F4-经营之印</td><td>从H5水池左侧跳进G5的墙，穿过墙（注意有坑，参照<a target="_blank" href="https://static.wikia.nocookie.net/lamulana-remake/images/5/5d/Coe_maze.png/revision/latest/scale-to-width-down/330?cb=20120919220052">此图</a>），来到F5下方用诞生之印解封，去F4右侧获得</td><td></td>
+			</tr>
+			<tr>
+				<td>F4-永久照明</td><td><ol>
+					<li>在产声之碑H3击破右上角的墙，用经营之印解封</li>
+					<li>回到死灭之碑，再次走到F5下方，用经营之印解封</li>
+					<li>在F4房间右侧使用照明弹启动永久照明</li>
+				</ol></td><td class="tip"><ul class="tip">
+					<li>黑暗可以被维持世界的神所驱散。左手的海螺所指示之处。——石碑（死灭之碑G5）</li>
+					<li>[调查模式]封印的破坏痕迹深处，似乎还有什么。——封印（死灭之碑F5）</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="g5">经营之道（G5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>G5-墙</td><td>击破H5水池左侧，跳进墙（注意有坑，参照<a target="_blank" href="https://static.wikia.nocookie.net/lamulana-remake/images/5/5d/Coe_maze.png/revision/latest/scale-to-width-down/330?cb=20120919220052">此图）</a></td>
+			</tr>
+			<tr>
+				<td>G5-下方通路</td><td>踩地板开关解除激光</td>
+			</tr>
+			<tr>
+				<td><span class="hide">G5-时间之门</span></td><td><span class="hide">带钥匙妖精过来解锁</span></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="h5">经营之池（H5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>H5-隐藏通路</td><td>击破水池左侧，跳进G5的墙</td><td class="tip">进入墙中吧。——石碑（死灭之碑H5）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="g2h2">湿婆的十字壁画（G2、H2）</h4>
+	<p>进入方式：击败Viy后，从灼热洞窟进入</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>G2-十字壁画</td><td>从产声之碑G3进入壁画内，放重物解锁B2的飞行器壁画</td><td class="tip">帕伦克沉睡的壁画就在其中。——石碑（产声之碑G3）</td>
+			</tr>
+			<tr>
+				<td>H2-商店</td><td>击破画面中间梯子左侧的墙，可购买大地之枪（10枚25G）、照明弹（10枚45G）、轮刃（2枚55G）</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="h3">前室（H3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>H3-近路</td><td>右下角的墙壁可以从右侧击破，形成近路</td>
+			</tr>
+			<tr>
+				<td>H3-空箱子</td><td>与帕伦克对战时，若未能启动飞机则失败，宝石会重新出现在这个箱子里</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="i3">帕伦克之棺（I3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>I3-帕伦克的十字架</td><td>进入产声之碑G3壁画→死灭之碑G2壁画内放重物→B2使用袋状钥匙</td><td></td>
+			</tr>
+			<tr>
+				<td>I3-陷阱</td><td>十字架出现时，上方平台会掉落，小心被砸死</td><td></td>
+			</tr>
+			<tr>
+				<td>I3-帕伦克</td><td><ul>
+					<li>用宝石破坏十字架，进入BOSS战</li>
+					<li>开战时，用袋状钥匙启动飞机，若失败则战斗中止，宝石会重新出现在H3箱子里</li>
+					<li>击败后解锁产声之碑里表门（通往死灭之碑牛头马面处）</li>
+				</ul></td><td class="tip">飞向天空的铁块模型。那是第6子所制作的飞行机器。持有黄金钥匙的话就会开始运作。——石碑（女神之塔B6）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c1d1">至圣参道（C1、D1）</h4>
+	<p>进入方式：击败帕伦克后，从产声之碑里表门进入</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C1-石像</td><td>攻击石像使其走动，继续攻击可以使其停下，站在石像肩膀上可跳至上方平台</td><td class="tip">巨大的石像是Spriggan。展露敌意的话他就会苏醒。继续与之作战的话他会再次入睡。——石碑（死灭之碑C3）</td>
+			</tr>
+			<tr>
+				<td>C1-陷阱</td><td>触碰右上角十字架会掉落柱子，小心被压死，掉落后D1的石碑被盖住无法查看</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e1f1">牛头马面之门（E1、F1）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E1-壁画开关</td><td>击败牛头马面后，带勾玉来到这个房间，中间的地板会升起，使用勾玉解锁D4壁画</td><td class="tip">嵌入墙中的智慧。在地狱守门人看守的宫殿前举起证明吧。黑暗中将会浮现出光的文字。那份智慧正是掌管咒文的假想的有识之士。——石碑（迷失之门E2）</td>
+			</tr>
+			<tr>
+				<td>F1-石像</td><td>攻击石像使其走动，继续攻击可以使其停下，站在石像肩膀上可跳至上方平台</td><td class="tip">巨大的石像是Spriggan。展露敌意的话他就会苏醒。继续与之作战的话会他再次入睡。——石碑（死灭之碑C3）</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>

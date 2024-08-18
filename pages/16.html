@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>产声之碑</h1>
+	<table class="table table-bordered table-img" style="width:825px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td></td><td></td><td></td><td rowspan="2" onclick="tomark('d1d2')">妙音天女之间</td><td></td><td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td></td><td></td><td></td><td colspan="2" onclick="tomark('e2f2')">针之周壁</td><td rowspan="2" onclick="tomark('g2g3')">湿婆之间</td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td colspan="2" onclick="tomark('a3b3')">提婆之间</td><td></td><td></td><td></td><td></td><td rowspan="2" onclick="tomark('h3h4')">毗湿奴之间</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td></td><td colspan="2" onclick="tomark('b4c4')">梵天之间</td><td></td><td></td><td></td><td></td><td onclick="tomark('i4')">雪山神女之间</td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td></td><td></td><td colspan="2" onclick="tomark('c5d5')">阿修罗之间</td><td colspan="2" onclick="tomark('e5f5')">塞犍陀之间</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">6</th><td></td><td></td><td></td><td></td><td onclick="tomark('e6')">哈奴曼之间</td><td onclick="tomark('f6')">象头神之间</td><td onclick="tomark('g6')">吉祥天女之间</td><td></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="map-info">
+	<h4>区域信息</h4>
+	<ul>
+		<li>分为上下两层，不能互通，在下层F5击败塞犍陀后可以互通</li>
+		<li>上层从巨人墓场右侧进入</li>
+		<li>下层从女神之塔进入，包含存档点</li>
+	</ul>
+	<h4>出入口</h4>
+	<ul>
+		<li>A3：圣杯石碑</li>
+		<li>A3←→女神之塔A2，薇儿丹蒂之塔</li>
+		<li>D1←→巨人墓场E5，前室</li>
+		<li>D2←→死灭之碑C1，至圣参道（击败帕伦克并取得铜镜后）</li>
+	</ul>
+	<h4>获得物</h4>
+	<ul>
+		<li>物品：<a href="javascript:tomark2('statue')">女性像</a>、<a href="javascript:tomark2('perfume')">香水</a>、<a href="javascript:tomark2('pochette')">袋状钥匙</a>、<a href="javascript:tomark2('key')">次元钥匙</a>、<a href="javascript:tomark2('vessel')">容器</a></li>
+		<li>其他：<a href="javascript:tomark2('map')">地图</a>、<a href="javascript:tomark2('shop')">十字架宝石</a></li>
+		<li>宝箱：<a href="javascript:tomark2('chest1')">E2</a>、<a href="javascript:tomark2('chest2')">H4</a>、<a href="javascript:tomark2('chest3')">E6</a></li>
+	</ul>
+	<h4 id="d1d2">妙音天女之间（D1、D2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D1-石碑</td><td>阅读石碑学习旧字体</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e2f2">针之周壁（E2、F2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="chest1">
+				<td>E2-宝箱</td><td>杀死忍者后解锁</td><td></td>
+			</tr>
+			<tr id="vessel">
+				<td>F2-容器</td><td>从G2下方靠近石像，装备天使之盾反弹激光</td><td class="tip">金色的光辉能将细长的光反弹。——石碑（产声之碑E5）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="g2g3">湿婆之间（G2、G3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="perfume">
+				<td>G2-香水</td><td>在迷失之门E1使用生命的齿轮后，等待泥人走到右上角机关处解锁</td><td class="tip">以你的力量无法到达。——石碑（产声之碑G2）</td>
+			</tr>
+			<tr>
+				<td>G2-左下石像</td><td>靠近时发射激光，装备天使之盾反弹，否则会被秒</td><td class="tip">金色的光辉能将细长的光反弹。——石碑（产声之碑E5）</td>
+			</tr>
+			<tr>
+				<td>G3-十字壁画</td><td>从H2传送门进入左下区域，到上方梯子处（有大象的那个平台）击破右侧的墙，传送到十字壁画内，继续传送到死灭之碑G2壁画内，放重物解锁死灭之碑B2的飞行器壁画</td><td class="tip">帕伦克沉睡的壁画就在其中。——石碑（产声之碑G3）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="h3h4">毗湿奴之间（H3、H4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>H3-照明开关</td><td>击破右上角的墙，用经营之印解封，再回到死灭之碑F5完成剩余步骤即可永久照明</td><td class="tip"><ul class="tip">
+					<li>黑暗可以被维持世界的神所驱散。左手的海螺所指示之处。——石碑（死灭之碑G5）</li>
+					<li>[考古学事典>毗湿奴]被认为是印度神话中的毗湿奴神的壁画。是最高主神之一，担负着维持世界的任务。——壁画（产声之碑H3）</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>H3-传送门</td><td>中间第二层平台左侧可传送至G3左下区域</td><td></td>
+			</tr>
+			<tr>
+				<td>H4-左下通路</td><td>在F5击败塞犍陀后解锁，通往F5，连通产声之碑两个区域</td><td></td>
+			</tr>
+			<tr>
+				<td>H4-右侧通路</td><td>用钩爪攀住右下角的柱子，柱子倒塌，进入I4</td><td></td>
+			</tr>
+			<tr id="chest2">
+				<td>H4-宝箱</td><td>击破左下角的墙</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="i4">雪山神女之间（I4）</h4>
+	<p>进入方式：用钩爪攀住H4右下角的柱子</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="statue">
+				<td>I4-女性像</td><td>放重物后到刺下，刺开始掉落，在最右边骸骨上放重物开门，逃出后回来解锁</td><td class="tip"><ul class="tip">
+					<li>山之女神会变换姿态。成为嗜血好战的女神。要平息她的怒火，只能伏在地上祈祷。——石碑（毁灭之塔C4）</li>
+					<li>[考古学事典>雪山神女]被认为是印度神话中的雪山神女的壁画。湿婆神的妻子。——壁画（产声之碑I4），变化前</li>
+					<li>[考古学事典>迦梨]被认为是印度神话中的迦梨女神的壁画。血与酒与战斗的女神。——壁画（产声之碑I4），变化后</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a3b3">提婆之间（A3、B3）</h4>
+	<p>上方进入方式：C5使用蛇之杖→C4使用水晶骷髅→一路向右传送到C5下方→轮刃开路→向右走掉落至上层→一路走到存档点</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A3-陷阱门</td><td>存档点左上方有陷阱门，可以下去</td>
+			</tr>
+			<tr>
+				<td>B3-机关</td><td>对左侧凹槽使用生命的齿轮，再对右侧凹槽使用生命的齿轮（小心被压死），解锁右下角通路</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b4c4">梵天之间（B4、C4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B4-传送门</td><td>从B3右下角进入B4顶层，往左走进入传送门，传送至E5左下</td><td></td>
+			</tr>
+			<tr id="map">
+				<td>B4-地图</td><td>击破NPC房间下方的石头，在该处使用孕妇像</td><td></td>
+			</tr>
+			<tr id="shop">
+				<td>C4-商店</td><td>在迷失之门E1使用生命的齿轮后，进入泥人洞，可购买子弹（1盒400G）、十字架宝石（150G）、重物（5枚20G）</td><td class="tip"><ul class="tip">
+					<li>产生生命之地有售卖宝石的商店。在创造之神所在之处。——石碑（巨人墓场E5）</li>
+					<li>[考古学事典>梵天]被认为是印度神话中的梵天的壁画。是最高主神之一，也是创造之神。——壁画（产声之碑C4）</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>C4-梯子</td><td>在右上方骷髅图案处使用水晶骷髅，解锁右侧梯子</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c5d5">阿修罗之间（C5、D5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C5-下方区域</td><td>在左上角的基座使用蛇之杖，开启下方传送门，向右走跳到D5对面即可传送</td><td></td>
+			</tr>
+			<tr>
+				<td>C5-右下通路</td><td>扔轮刃穿过缝隙反弹，击中头像开路（扔出后跳起，轮刃会跟随你的高度向上飞）<ul>
+					<li>头像右侧可以跳进去，是传送门，通往E5顶层</li>
+					<li>头像下方的路通往A3存档点（必须先在A4用水晶骷髅解锁梯子）</li>
+				</ul></td><td class="tip">毗湿奴用如同太阳的武器斩下了阿修罗的头。——石碑（产声之碑H3）</td>
+			</tr>
+			<tr>
+				<td>D5-陷阱</td><td>如果你以硬直状态掉下去，就会无限循环，只能用圣杯逃出</td><td></td>
+			</tr>
+			<tr id="key">
+				<td>D5-次元钥匙</td><td><ol>
+					<li>对左侧壁龛使用孕妇像，右侧壁龛使用龙骨，下方出现无限标志，跳下去用无限钥匙解锁</li>
+					<li>从存档点右边下到B4，传送至E5左下，击打左下角的墙</li>
+					<li>回到D5，梯子出现，装备穆拉纳护身符打开</li>
+				</ol></td><td class="tip"><ul class="tip">
+					<li>有一个像是用来放东西的祭坛。深处的墙上写着「诞生」。——左侧壁龛（产声之碑D5）</li>
+					<li>有一个像是用来放东西的祭坛。深处的墙上写着「死」。——右侧壁龛（产声之碑D5）</li>
+					<li>取得次元钥匙吧。在无限产生生命的地方，有连接无限之处。在那里刺向无限。——石碑（次元回廊C5）</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e5f5">塞犍陀之间（E5、F5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E5-各区域进入方式</td><td><ul>
+					<li>顶层：C5阿修罗头像右边传送门</li>
+					<li>左下：从存档点右边下到B4传送门</li>
+					<li>中间：G6右下角传送门</li>
+				</ul></td><td></td>
+			</tr>
+			<tr>
+				<td>E5-左下机关</td><td>放重物启动右边的移动砖块</td><td></td>
+			</tr>
+			<tr>
+				<td>E5-左下墙壁</td><td>击打左下角的墙，在D5出现梯子，通往次元钥匙处</td><td></td>
+			</tr>
+			<tr>
+				<td>F5-塞犍陀（Skanda）</td><td>在迷失之门E1使用生命的齿轮，并在G6跳生命之舞后出现</td><td rowspan="2" class="tip">这里是诞生生命之地。歌颂生命之时，巨大的土人就会诞生。守护黄金钥匙的土人。——石碑（产声之碑B4）</td>
+			</tr>
+			<tr id="pochette">
+				<td>F5-袋状钥匙</td><td>击败塞犍陀后解锁</td>
+			</tr>
+			<tr>
+				<td>F5-右侧通路</td><td>击败塞犍陀后解锁，通往H4，连通产声之碑两个区域</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e6">哈奴曼之间（E6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="chest3">
+				<td>E6-宝箱</td><td>画面中部有两列柱子，击破左边最下方的柱子</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f6">象头神之间（F6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>F6-壁画</td><td>调查壁画后，解锁G6右下角传送门</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="g6">吉祥天女之间（G6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>G6-传送门</td><td>调查F6壁画后，解锁右下角传送门，通往E5中部</td><td></td>
+			</tr>
+			<tr>
+				<td>G6-生命之舞</td><td>在石碑前跳舞：左挥武器3下→右挥武器3下→跳1下，解锁F5塞犍陀</td><td class="tip"><ul class="tip">
+					<li>在此处起舞。歌颂生命吧。——石碑（产声之碑G6）</li>
+					<li>生命之舞。——石碑（双连迷宫I2）</li>
+					<li>※双连迷宫石碑上有步骤配图</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>地狱圣堂</h1>
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#map-name1">只看数字</a></li>
+	<li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#map-name2">房间概况</a></li>
+	</ul>
+	<div class="tab-content">
+		<div id="map-name1" class="tab-pane active"><br/><table class="table table-bordered table-img" style="width:465px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td></td><td></td><td onclick="tomark('c1')">7</td><td onclick="tomark('d1')">6</td><td onclick="tomark('e1')">5</td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td></td><td></td><td onclick="tomark('c2')">8</td><td></td><td onclick="tomark('e2')">4</td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td onclick="tomark('a3')">10</td><td onclick="tomark('b3')">9</td><td onclick="tomark('c3')">1</td><td onclick="tomark('d3')">2</td><td onclick="tomark('e3')">3</td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td onclick="tomark('a4')">11</td><td></td><td>0</td><td></td><td onclick="tomark('e4')">地狱1</td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td onclick="tomark('a5')">12</td><td onclick="tomark('b5')">13</td><td onclick="tomark('c5')">14</td><td onclick="tomark('d5')">15</td><td onclick="tomark('e5')">16</td>
+			</tr>
+			<tr>
+				<th class="table-light">6</th><td onclick="tomark('a6')">地狱2</td><td></td><td>21</td><td></td><td onclick="tomark('e6')">17</td>
+			</tr>
+			<tr>
+				<th class="table-light">7</th><td onclick="tomark('a7')">24</td><td onclick="tomark('b7')">23</td><td onclick="tomark('c7')">20</td><td onclick="tomark('d7')">19</td><td onclick="tomark('e7')">18</td>
+			</tr>
+			<tr>
+				<th class="table-light">8</th><td onclick="tomark('a8a9')">25</td><td></td><td onclick="tomark('c8')">22</td><td></td><td onclick="tomark('e8')">地狱3</td>
+			</tr>
+			<tr>
+				<th class="table-light">9</th><td onclick="tomark('a8a9')">26</td><td onclick="tomark('b9')">27</td><td onclick="tomark('c9')">28</td><td onclick="tomark('d9')">30</td><td onclick="tomark('e9')">31</td>
+			</tr>
+			<tr>
+				<th class="table-light">10</th><td onclick="tomark('a10a11')">地狱4</td><td></td><td onclick="tomark('c10')">29</td><td></td><td onclick="tomark('e10')">32</td>
+			</tr>
+			<tr>
+				<th class="table-light">11</th><td onclick="tomark('a10a11')">地狱5</td><td></td><td onclick="tomark('c11')">35</td><td onclick="tomark('d11')">34</td><td onclick="tomark('e11')">33</td>
+			</tr>
+		</tbody>
+	</table></div>
+	<div id="map-name2" class="tab-pane"><br/><table class="table table-bordered table-img" style="width:465px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td></td><td></td><td onclick="tomark('c1')">Sakit<br/>（7）</td><td onclick="tomark('d1')">龙龙<br/>（6）</td><td onclick="tomark('e1')">双头蛇<br/>（5）</td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td></td><td></td><td onclick="tomark('c2')">炸弹扔缝<br/>（8）</td><td></td><td onclick="tomark('e2')">鬼畜平台<br/>（4）</td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td onclick="tomark('a3')">Ellmac<br/>（10）</td><td onclick="tomark('b3')">乌龟<br/>（9）</td><td onclick="tomark('c3')">入口上方<br/>（1）</td><td onclick="tomark('d3')">很多小怪<br/>（2）</td><td onclick="tomark('e3')">陷阱门<br/>（3）</td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td onclick="tomark('a4')">巴哈姆特<br/>（11）</td><td></td><td>入口<br/>（0）</td><td></td><td onclick="tomark('e4')">地狱1</td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td onclick="tomark('a5')">拳头<br/>（12）</td><td onclick="tomark('b5')">史莱姆<br/>（13）</td><td onclick="tomark('c5')">Viy<br/>（14）</td><td onclick="tomark('d5')">帕伦克<br/>（15）</td><td onclick="tomark('e5')">升降柱子<br/>（16）</td>
+			</tr>
+			<tr>
+				<th class="table-light">6</th><td onclick="tomark('a6')">地狱2</td><td></td><td>入口捷径<br/>（21）</td><td></td><td onclick="tomark('e6')">提亚马特<br/>（17）</td>
+			</tr>
+			<tr>
+				<th class="table-light">7</th><td onclick="tomark('a7')">推砖块<br/>（24）</td><td onclick="tomark('b7')">桥<br/>（23）</td><td onclick="tomark('c7')">魔女<br/>（20）</td><td onclick="tomark('d7')">穆修胡休<br/>（19）</td><td onclick="tomark('e7')">摸黑<br/>（18）</td>
+			</tr>
+			<tr>
+				<th class="table-light">8</th><td onclick="tomark('a8a9')">跳刺<br/>（25）</td><td></td><td onclick="tomark('c8')">模拟经营<br/>（22）</td><td></td><td onclick="tomark('e8')">地狱3</td>
+			</tr>
+			<tr>
+				<th class="table-light">9</th><td onclick="tomark('a8a9')">跳刺<br/>（26）</td><td onclick="tomark('b9')">跳小平台<br/>（27）</td><td onclick="tomark('c9')">钻眼球<br/>（28）</td><td onclick="tomark('d9')">很多魔女<br/>（30）</td><td onclick="tomark('e9')">两只蝎<br/>（31）</td>
+			</tr>
+			<tr>
+				<th class="table-light">10</th><td onclick="tomark('a10a11')">地狱4</td><td></td><td onclick="tomark('c10')">四块石碑<br/>（29）</td><td></td><td onclick="tomark('e10')">牛和虫<br/>（32）</td>
+			</tr>
+			<tr>
+				<th class="table-light">11</th><td onclick="tomark('a10a11')">地狱5</td><td></td><td onclick="tomark('c11')">通关奖励<br/>（35）</td><td onclick="tomark('d11')">史莱姆王<br/>（34）</td><td onclick="tomark('e11')">嵌套机关<br/>（33）</td>
+			</tr>
+		</tbody>
+	</table></div>
+	</div>
+	<div class="map-info">
+	<h4>特别说明</h4>
+	<ul>
+		<li>不同版本的地狱圣堂有明显差别，这里只给出Steam版</li>
+		<li>这个区域以操作为主，很多地方不好描述，不会的就去看视频或者问大佬吧</li>
+	</ul>
+	<h4>解锁方式</h4>
+	<ol>
+		<li>击败八守卫</li>
+		<li>和女主对话得知她父亲的事情（之后不要跟任何无关NPC或店主对话，包括女主）</li>
+		<li>引导之门C4，进入巨像嘴里与石碑对话（必须在击败八守卫前清除嘴里的石头）</li>
+		<li>地上I3，长老的雕像前按暂停睡觉</li>
+		<li>天黑时与长老对话</li>
+		<li>地上K2，跳至帐篷处继续往左走进入房间，与妖精对话</li>
+		<li>迷失之门C5，带钥匙妖精修复颠倒的门，进入与石碑对话</li>
+		<li>时间之门D2（引导之门存档点房间），从梯子处跳进右上角，一直往右走进入房间，与石碑对话</li>
+		<li>死灭之碑I3，跳进壁画中，传送至岩浆内（如果没有传送，可能是因为中途跟其他NPC对话，只能读档重来），进入时是视图1，往下掉至视图20（错过会被传送回11），击破右侧的墙进入女神之塔，进入旁边房间与石碑对话</li>
+		<li>解锁地狱圣堂，入口为引导之门E2上方骸骨间的空缺处（从D2梯子处跳进右上角）</li>
+	</ol>
+	<h4 id="c3">房间1（C3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C3-近路</td><td>打通房间9后，左上的墙可以击破形成近路</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d3">房间2（D3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D3-机关</td><td>启动所有机关后进入房间3</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e3">房间3（E3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E3-机关</td><td>启动所有机关后进入房间4，地形参照<a target="_blank" href="http://la-mulana.s13.xrea.com/x/wii/hell/03.jpg">此图</a>（绿色地板是假的，其余颜色为固定时间间隔开启）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e4">地狱1（E4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E4-地狱</td><td>在“地狱”二字中间按暂停睡觉（会听到海螺音效），击败所有小怪后回到房间0</td><td class="tip">在5个地狱之中入睡吧。——石碑（地狱圣堂C6）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e2">房间4（E2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E2-机关</td><td>启动所有机关后进入房间5</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e1">房间5（E1）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E1-机关</td><td>启动所有机关后进入房间6</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d1">房间6（D1）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D1-机关</td><td>启动所有机关后进入房间7</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c1">房间7（C1）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C1-机关</td><td>启动所有机关后进入房间8，建议从上往下（如果掉下去会很难回到上面）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c2">房间8（C2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C2-机关</td><td>打死所有怪，踩下开关用时之灯定住，从左上角的缝隙里扔炸弹（如果没有时之灯，就先扔炸弹然后快速去踩开关，扔的时候跟上方砖块左边缘基本齐平，跳起来扔），炸开下方的墙，启动机关开启下方通路（要向左跳，否则掉回房间0）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b3">房间9（B3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B3-机关</td><td>启动所有机关后进入房间10，注意下面两层有假地板，参照<a target="_blank" href="http://la-mulana.s13.xrea.com/x/wii/hell/09.jpg">此图</a>（也可以用滚地手里剑测出来），完成本房间后可以在房间1打通近路</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a3">房间10（A3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A3-机关</td><td>启动所有机关后进入房间11，右上角砖块里有隐藏机关，下面的机关从旁边跳至同等高度（跳得太高会让平台下沉，低一些就不会），注意如果没启动完掉到左边的坑里就爬不出来了</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a4">房间11（A4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A4-机关</td><td>启动所有机关后进入房间12，先垂直起跳到左二平台，然后二段跳到右边等高平台，然后是下面几个（如果不小心掉下去了，上面两个要靠小怪或者巴哈姆特的激光把你顶过去）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a5">房间12（A5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A5-机关</td><td>推左上角砖块启动机关，进入房间13</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a6">地狱2（A6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A6-地狱</td><td>在“地狱”二字中间按暂停睡觉（会听到海螺音效），击败所有小怪后回到房间12</td><td class="tip">在5个地狱之中入睡吧。——石碑（地狱圣堂C6）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b5">房间13（B5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B5-机关</td><td>用炸弹炸开墙，启动右上机关后进入房间14</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c5">房间14（C5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C5-通路</td><td>直接快速通过就不会出现激光，上方的梯子通往房间0</td>
+			</tr>
+			<tr>
+				<td>C5-商店</td><td>可购买照明弹（10枚50G）、炸弹（10枚120G）、子弹（1盒400G）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d5">房间15（D5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D5-机关</td><td>打死上方的鸟，当下方的鸟飞到左边时，跳到最低处，立刻转身打死鸟和忍者，跳至上方几个平台（这时会出帕伦克激光，贴着柱子就没事），跳去右上角启动机关（注意中间柱子上的忍者），下到梯子处，不爬梯子，直接往右跳进入房间16（爬梯子会出现穆拉纳特产4）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e5">房间16（E5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E5-机关</td><td>打碎壶跳到该处，踩着柱子上去，过马路到右边，用钩爪攀住上升的柱子到达右上角，落下进入房间17</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e6">房间17（E6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E6-机关</td><td>启动所有机关后进入房间18</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e7">房间18（E7）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E7-机关</td><td>打死两只鸟，摸黑启动所有机关后进入房间18，地形参照<a target="_blank" href="http://la-mulana.s13.xrea.com/x/wii/hell/18.jpg">此图</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e8">地狱3（E8）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E8-地狱</td><td>在“地狱”二字中间按暂停睡觉（会听到海螺音效），击败所有小怪后回到房间12</td><td class="tip">在5个地狱之中入睡吧。——石碑（地狱圣堂C6）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d7">房间19（D7）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D7-小BOSS</td><td><ul>
+					<li>正常打法：鞭子狂抽，借助时之灯狂抽，放照明弹可以中止激光</li>
+					<li>邪道打法：从它脚下卡BUG到背后的梯子上去，当它抬头时用手里剑/手枪/轮刃打它的头（建议先用手里剑试一下，然后用手枪，轮刃掌握不好时机的话会无法回收）</li>
+					<li>※邪道打法参考自<a target="_blank" href="https://psnine.com/topic/19530">此处</a>，触发条件未知，推测和BOSS位置、主角无敌状态、旁边的忍者有关，比较看脸，但是可以肯定这个BUG在当前版本里仍然存在</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c7">房间20（C7）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C7-捷径</td><td>最上方的砖块可以进入，通往房间21，进去激活入口捷径</td>
+			</tr>
+			<tr>
+				<td>C7-机关</td><td>阅读石碑，穿过最下方砖块进入房间22解谜，完成后向左进入房间23</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c8">房间22（C8）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C8-谜题</td><td>打死魔女，装备guild，将中间的砖块踩至下方门口，形成隐藏商店，guild发出声音后解谜完成（会听到海螺音效），回到上面，可以往左走了</td><td class="tip">奏响声音。就给予你道路。——石碑（地狱圣堂C7）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b7">房间23（B7）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B7-桥</td><td>完成房间22的谜题后出现桥，中间偏左部分会塌，跳起来在该处快速点一下踩塌后通过（否则左边会出现拳头）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a7">房间24（A7）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A7-砖块</td><td>带钥匙妖精过来解锁，然后开始推砖块<ol>
+					<li>最下方砖块往左推到开关上</li>
+					<li>它上面那块往右推一点，但是不推下去</li>
+					<li>再上面那块往右推下去，叠在刚才那块上面</li>
+					<li>右上角砖块往右推到右下角开关上</li>
+					<li>最上方砖块往左推到中间开关上</li>
+					<li>剩下两块推完即可（左上的文字砖块可以穿过）</li>
+				</ol></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a8a9">房间25、26（A8、A9）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A8-机关</td><td>左边的机关必须从地狱4出来启动，解锁房间26右下角通路</td>
+			</tr>
+			<tr>
+				<td>A8、A9-跳刺</td><td>有多种方式，成功率因人而异，多尝试即可<ul>
+					<li>方式一：从地狱4回来的途中打死所有鸟（熟练后可省略），用钩爪通过，用轮刃打死下面的马</li>
+					<li>方式二：装备无敌时间增加软件，用铁蒺藜自残（背对单向门扔出→面朝单向门被弹→向右跳）</li>
+					<li>方式三：从推砖块那个房间调整好位置落下，可以刚好从刺中间通过（具体方法参照<a target="_blank" href="https://psnine.com/topic/19530">此处</a>），右侧用无敌时间+钩爪通过</li>
+					<li>※普通模式下右下角多了个有刺平台，如果钩爪不熟练建议直接从那个平台二段跳离开房间，用钩爪容易磕脑袋</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a10a11">地狱4、地狱5（A10、A11）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A10、A11-地狱</td><td><ul>
+					<li>在“地狱”二字中间按暂停睡觉（会听到海螺音效）</li>
+					<li>地狱4击败所有小怪后回到房间25，启动机关</li>
+					<li>地狱4下方是地狱5，记得要去睡，地狱5击败所有小怪后回到房间12</li>
+				</ul></td><td class="tip">在5个地狱之中入睡吧。——石碑（地狱圣堂C6）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b9">房间27（B9）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B9-跳板</td><td>在门口用鞭子和手里剑打死两条龙，困难模式下优先用照明弹打死上面的鸟（没打死或鸟放出子弹就退出重进），然后开始跳板（除了门口磕脑袋以外，剩下的都可以用二段垂直起跳），阅读并走进左上角石碑，开启右侧通路</td><td class="tip">我就在这里。——石碑（地狱圣堂B9）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c9">房间28（C9）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C9-通路</td><td>在左下角扔轮刃打死小怪，等激光暂停后通过，如果在地狱1~5都睡过觉，可以钻进下方眼球进入房间29</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c10">房间29（C10）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C10-谜题</td><td>阅读所有石碑，去调查以下四个地点，回来会出现大石碑，阅读后听到海螺音效再走，此时房间0的大石碑可以进入，通往房间33的密室，进去启动机关<ul>
+					<li>房间6（双头蛇房间的隔壁），调查右下角的微笑骷髅</li>
+					<li>房间18（摸黑的房间），调查右上方的愤怒骷髅</li>
+					<li>房间21（有妖精点的房间），调查左上方的闭嘴骷髅</li>
+					<li>房间26（第二个跳刺房间），调查中间的张嘴骷髅</li>
+				</ul></td><td class="tip"><ul class="tip">
+					<li>「Smile」——石碑（地狱圣堂C10）</li>
+					<li>「Open」——石碑（地狱圣堂C10）</li>
+					<li>「Close」——石碑（地狱圣堂C10）</li>
+					<li>「Anger」——石碑（地狱圣堂C10）</li>
+					<li>石碑变为了幻影。——大石碑（地狱圣堂C10）</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d9">房间30（D9）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D9-机关</td><td>房间地形参照<a target="_blank" href="http://ww4.sinaimg.cn/large/a15b4afegw1exgvazjt4vj20g40cn0x0.jpg">此图</a>（红框地板是假的，剩下的都会塌）<ul>
+					<li>普通模式：在门口扔轮刃打死下面两个魔女，剩下那个最好也打死，按图示路线启动机关</li>
+					<li>困难模式：在门口扔轮刃打死下面三个魔女（失败或白魔女发光就退出重进），跳出去用照明弹或鞭子打死白魔女，启动所有机关，后续再来时可以打死下面三个用时之灯通过</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e9">房间31（E9）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E9-小BOSS</td><td>击败两个小BOSS后启动机关，进入房间32</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e10">房间32（E10）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E10-小BOSS</td><td>击败两个小BOSS后进入房间33</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e11">房间33（E11）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E11-机关</td><td>需要先完成房间29的谜题，从房间0的大石碑进入密室，消除机关两侧的墙，启动机关后进入房间34</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d11">房间34（D11）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D11-THE BOSS</td><td>用钥匙剑破坏十字架（注意不能碰到），进入BOSS战，优先使用手枪和轮刃，用完了再考虑鞭子，BOSS靠近时二段跳起挂在墙上，等它走远了再继续攻击</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c11">房间35（C11）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C11-通关奖励</td><td>注意地上有坑，参照<a target="_blank" href="http://la-mulana.s13.xrea.com/x/wii/hell/35.jpg">此图</a>，左边的石碑不能去，去看右上角和中间的石碑，上方出现门，进入领取奖励</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>

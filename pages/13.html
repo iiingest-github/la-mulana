@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>月光圣殿</h1>
+	<table class="table table-bordered table-img" style="width:555px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td rowspan="2" onclick="tomark('a1a2')">纳骨堂</td><td rowspan="2" onclick="tomark('b1b2')">伊甸的阶梯</td><td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td colspan="2" onclick="tomark('c2d2')">海神的脚下</td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td></td><td onclick="tomark('b3')">力之石室</td><td rowspan="4" onclick="tomark('c3c4c5c6')">月见竖穴</td><td onclick="tomark('d3')">月之金字塔玄室</td><td rowspan="2" onclick="tomark('e3e4')">月之望楼</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td></td><td></td><td onclick="tomark('d4')">月之金字塔</td><td onclick="tomark('f4')">宝之石室</td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td></td><td onclick="tomark('b5')">被关闭的参道</td><td colspan="2" onclick="tomark('d5e5')">至冥所</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">6</th><td></td><td></td><td onclick="tomark('d6')">冥界殿</td><td></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="map-info">
+	<h4>区域信息</h4>
+	<ul>
+		<li>初始时分为上下两层，不能互通，要从下层C4打通电梯</li>
+		<li>上层（1~3）从太阳金字塔/下层电梯进入，包含存档点</li>
+		<li>下层（4~6）从太阳神殿里表门/巨人墓场进入</li>
+		<li>金字塔内部（D3、D4）只能从太阳金字塔进入</li>
+	</ul>
+	<h4>出入口</h4>
+	<ul>
+		<li>B2：圣杯石碑</li>
+		<li>B1←→乐园</li>
+		<li>D4←太阳神殿E3，太阳金字塔</li>
+		<li>D2←→双连迷宫I5，波塞冬之间</li>
+		<li>C5←→太阳神殿D5，至圣所（击败Ellmac并取得铜镜后）</li>
+		<li>B5←→巨人墓场D2，第2墓室（从巨人墓场过来开路）</li>
+		<li><span class="hide">B1←→迷失之门G6，始迷所（乐园变化后）</span></li>
+	</ul>
+	<h4>获得物</h4>
+	<ul>
+		<li>武器：<a href="javascript:tomark2('axe')">斧</a></li>
+		<li>物品：<a href="javascript:tomark2('claw')">钩爪</a>、<a href="javascript:tomark2('staff')">蛇之杖</a>、<a href="javascript:tomark2('fruit')">伊甸的果实</a>、<a href="javascript:tomark2('shop')">驱魔书</a>、<a href="javascript:tomark2('ocarina')" class="hide3">贤者的陶笛</a></li>
+		<li>其他：<a href="javascript:tomark2('map')">地图</a></li>
+		<li>宝箱：<a href="javascript:tomark2('chest')">B1</a></li>
+	</ul>
+	<h4 id="b5">被关闭的参道（B5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B9-障碍</td><td>所有墙可击破（有图案的除外），从巨人墓场过来放重物消除有图案的的墙</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c3c4c5c6">月见竖穴（C3、C4、C5、C6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>C3-隐藏通路</td><td>击破左上角的墙进入B3</td><td></td>
+			</tr>
+			<tr>
+				<td>C4-上层电梯</td><td>扔手里剑打碎左上的微笑石像，若选错则会被墙挡住，退出房间重置谜题</td><td class="tip">我被要求选择3名女人。3人在约定的地方等待着。我没能做出选择。她们正在月见竖穴等待着。读此石碑之人。请替我将她射穿。永葆微笑的那个她。——石碑（太阳神殿F3）</td>
+			</tr>
+			<tr>
+				<td>C4-可调查点</td><td>调查四只手的中间，C2出现机关</td><td class="tip">寻找伊甸之人啊。打开4个箱子吧。寻找4个台座吧。在月光照耀之地四人的手中。——石碑（巨人墓场C1）</td>
+			</tr>
+			<tr>
+				<td>C6-陷阱</td><td>放重物会被关起来，然后掉刺</td><td></td>
+			</tr>
+			<tr>
+				<td>C6-可调查点</td><td>调查陷阱机关位置，C2出现机关</td><td class="tip">寻找伊甸之人啊。打开4个箱子吧。寻找4个台座吧。在月光照耀之地巨大陷阱的源头。——石碑（灼热洞窟G5）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b3">力之石室（B3）</h4>
+	<p>进入方式：击破C3左上角的墙</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="axe">
+				<td>B3-斧</td><td>击破左上角骷髅后立即逃走，巨石滚到右下角解锁</td>
+			</tr>
+			<tr>
+				<td><span class="hide">B3-开发者Samieru</span></td><td><span class="hide">击破放斧的地方下方的墙，出现房间，装备miracle+mirai见到开发者</span></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b1b2">伊甸的阶梯（B1、B2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>B1-乐园</td><td>取得伊甸的果实后，乐园里出现机关，<span class="hide">放重物后乐园变为迷失之门</span></td><td class="tip">这里是笼罩在雾中的乐园。驱散雾的话，会被更多的幸福所笼罩。取得乐园的果实，放在伊甸之树下。——石碑（乐园）</td>
+			</tr>
+			<tr id="chest">
+				<td>B1-宝箱</td><td>用轮刃击破石碑右下角有刺的墙（扔出后跳起，轮刃会跟随你的高度向上飞）</td><td></td>
+			</tr>
+			<tr id="map">
+				<td>B2-地图</td><td>放重物解锁，同时下方出刺，赶紧离开</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a1a2">纳骨堂（A1、A2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="claw">
+				<td>A1-钩爪</td><td>放重物解锁</td><td></td>
+			</tr>
+			<tr>
+				<td>A1-可调查点</td><td>调查最高平台上的脸，C2出现机关</td><td class="tip">寻找伊甸之人啊。打开4个箱子吧。寻找4个台座吧。在月光照耀之地高处的脸前。——石碑（空之水源B10）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="c2d2">海神的脚下（C2、D2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="fruit">
+				<td>C2-伊甸的果实</td><td>调查以下四个地点，调查后出现机关，按左→上→下→中的顺序启动<ul>
+					<li>A1，最高平台上的脸</li>
+					<li>C4，四只手的中间</li>
+					<li>C6，陷阱机关位置</li>
+					<li>E4，左下角迈克尔杰克逊</li>
+				</ul></td><td class="tip"><ul class="tip">
+					<li>寻找伊甸之人啊。解开4个谜题吧。调查4个谜题所指示的地方吧。——石碑（月光圣殿E5）</li>
+					<li>…高处的脸前。——石碑（空之水源B10）</li>
+					<li>…四人的手中。——石碑（巨人墓场C1）</li>
+					<li>…巨大陷阱的源头。——石碑（灼热洞窟G5）</li>
+					<li>…跳舞的男人脚下。——石碑（死灭之碑E4）</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>D2-机关</td><td>放重物使中间的墙落到平台上，出现梯子（不能踩碎平台，否则无法重置）</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d3">月之金字塔玄室（D3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><span class="hide">D3-梯子</span></td><td><span class="hide">对右上角孕妇图案使用孕妇像，解锁梯子</span></td><td class="tip"><span class="hide2">[调查模式]画着像是肚子很大的女人的图案。——壁画（D3）</span></td>
+			</tr>
+			<tr id="ocarina">
+				<td><span class="hide">D3-贤者的陶笛</span></td><td><span class="hide">从梯子到达中间平台，按暂停键睡觉解锁</span></td><td class="tip"><ul class="tip">
+					<li><span class="hide2">有男人就有女人。女人之中禁止使用武器。——石碑（太阳神殿D3）</span></li>
+					<li><span class="hide2">在女人之中入睡吧。——石碑（圣母之祠E6）</span></li>
+					<li><span class="hide2">怀孕的女人会给予你笛之音。——石碑（月光圣殿C3）</span></li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d4">月之金字塔（D4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D4-移动平台</td><td>在E4推砖块解锁</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e3e4">月之望楼（E3、E4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E3-贤者Alsedana</td><td><span class="hide">用陶笛和他对话，解锁毁灭之塔F1梯子（存疑）</span></td><td></td>
+			</tr>
+			<tr>
+				<td>E3-机关</td><td>坐电梯上来击打墙里的砖块，右上方出现机关，启动后金字塔顶掉落，打通去D6的路（注意：必须先在D5打开中间的平台，否则会失败）</td><td class="tip"><ul class="tip">
+					<li>前方是「冥界殿」。掌管死亡的神的房间。——石碑（月光圣殿D5）</li>
+					<li>削掉金字塔。从望楼打落它的顶端。如此就能破坏墙壁、到达冥界。——石碑（月光圣殿C6）</li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>E4-砖块</td><td>推砖块到开关上，D4出现移动平台</td><td></td>
+			</tr>
+			<tr>
+				<td>E4-可调查点</td><td>调查左下角迈克尔杰克逊，C2出现机关</td><td class="tip">寻找伊甸之人啊。打开4个箱子吧。寻找4个台座吧。在月光照耀之地跳舞的男人脚下。——石碑（死灭之碑E4）</td>
+			</tr>
+			<tr>
+				<td>E4-隐藏通路</td><td>击破右下角的墙进入F4</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f4">宝之石室（F4）</h4>
+	<p>进入方式：击破E4右下角的墙</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="shop">
+				<td>F4-商店</td><td><ul>
+					<li>用炸弹炸开砖块所在平台（从上面的缝隙里扔，或者从下往上扔），掉在开关上解除激光</li>
+					<li>可购买驱魔书（400G）、手里剑（10枚15G）、子弹（3盒400G，全游戏最便宜）</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d5e5">至冥所（D5、E5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D5-机关</td><td>放重物打开中间平台</td>
+			</tr>
+			<tr>
+				<td>D5-下方通路</td><td>打开中间平台后，去E3启动机关砸穿地板</td>
+			</tr>
+			<tr>
+				<td>E5-梯子</td><td>用诞生之印开启下层道路，爬上右边平台击破左侧的墙，出现梯子</td>
+			</tr>
+			<tr>
+				<td>E5-陷阱</td><td>封印左上方有陷阱门，掉进去会被困住</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d6">冥界殿（D6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D6-阿努比斯</td><td>初见时是无敌的，等一会儿右上角出现梯子，回去找女主拿死者之书再来打</td><td class="tip"><ul class="tip">
+					<li>前方是「冥界殿」。掌管死亡的神的房间。——石碑（月光圣殿D5）</li>
+					<li>掌管死亡的神之光。将所有生者置于死地。唯有持死者之书的人能够幸免。——石碑（月光圣殿B5）</li>
+					<li>有操纵死亡的神。有吸取生命的神。能封印其力量的书被托付在一位少女手中。——石碑（双连迷宫C4）</li>
+				</ul></td>
+			</tr>
+			<tr id="staff">
+				<td>D6-蛇之杖</td><td>击败阿努比斯解锁</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>

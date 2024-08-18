@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>La-Mulana 全地图手册</title>
+	<script src="src/jquery.min.js"></script>
+	<link rel="stylesheet" href="src/bootstrap.min.css">
+	<script src="src/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css">
+	<script src="src/script.js"></script>
+</head><body>
+	<div id="ctn">
+	<div class="to-top" onclick="totop()">︽</div>
+	<h1>巨人墓场</h1>
+	<table class="table table-bordered table-img" style="width:645px">
+		<thead class="table-light">
+			<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="table-light">1</th><td colspan="3" onclick="tomark('a1b1c1')">第1墓室</td><td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">2</th><td colspan="2" onclick="tomark('a2b2')">白银的祭坛</td><td colspan="2" onclick="tomark('c2d2')">第2墓室</td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">3</th><td></td><td></td><td>Abuto之墓</td><td rowspan="4" onclick="tomark('d3d4d5d6')">至墓道</td><td onclick="tomark('e3')">力之祭坛</td><td onclick="tomark('f3')">言灵的祭坛</td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">4</th><td></td><td></td><td></td><td rowspan="2" onclick="tomark('e4e5')">前室</td><td colspan="2" onclick="tomark('f4g4')">知识的祭坛</td>
+			</tr>
+			<tr>
+				<th class="table-light">5</th><td></td><td colspan="2" onclick="tomark('b5c5')">第3墓室</td><td></td><td></td>
+			</tr>
+			<tr>
+				<th class="table-light">6</th><td></td><td></td><td></td><td></td><td></td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="map-info">
+	<h4>区域信息</h4>
+	<ul>
+		<li>初始时分为左右区域，不能互通，要从右侧E4扔炸弹打通</li>
+		<li>左侧（A~D）从巨人灵庙/毁灭之塔进入，包含存档点</li>
+		<li>右侧（E~G）从女神之塔进入</li>
+	</ul>
+	<h4>出入口</h4>
+	<ul>
+		<li>D2：圣杯石碑</li>
+		<li>C3←→巨人灵庙D3，Zebu之间（击败Sakit并取得铜镜后）</li>
+		<li>D2←→月光圣殿B5，被关闭的参道</li>
+		<li>B5←→毁灭之塔G6，热源之泉</li>
+		<li>B1←→迷失之门C5，愚者的迷廊（解锁迷失之门后）</li>
+		<li>G4←→女神之塔E1，力之至道</li>
+		<li>E5←→产声之碑D1，妙音天女之间</li>
+	</ul>
+	<h4>获得物</h4>
+	<ul>
+		<li>武器：<a href="javascript:tomark2('sheld')">白银之盾</a>、<a href="javascript:tomark2('bomb')">炸弹</a>、<a href="javascript:tomark2('shop')" class="hide3">天使之盾</a></li>
+		<li>物品：<a href="javascript:tomark2('gauntlet')">金属手套</a></li>
+		<li>软件：<a href="javascript:tomark2('mirai')">mirai</a>、<a href="javascript:tomark2('emusic')">emusic</a></li>
+		<li>其他：<a href="javascript:tomark2('map')">地图</a></li>
+		<li>宝箱：<a href="javascript:tomark2('chest')">C1</a></li>
+	</ul>
+	<h4 id="c2d2">第2墓室（C2、D2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D2-机关</td><td>放重物掉下冰块，D3踩冰块去拿地图</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a1b1c1">第1墓室（A1、B1、C1）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr id="shop">
+				<td>A1-商店</td><td><ul>
+					<li>可购买大地之枪（10枚25G）、白银之盾（100G）、重物（5枚15G）</li>
+					<li>他的白银之盾是假的，用一段时间就会坏掉</li>
+					<li><span class="hide">若在次元回廊错过天使之盾，可以在他这里购买，花费400G</span></li>
+				</ul></td><td class="tip"><ul class="tip">
+					<li>来买。全部都是真货。——店主（巨人墓场A1）</li>
+					<li>真货是用钱买不到的。——石碑（巨人墓场A2）</li>
+					<li><span class="hide2">闪耀金光的天使之盾在这世上有2个。一个在扭曲之地，一个在虚伪之中。——石碑（死灭之碑H2）</span></li>
+				</ul></td>
+			</tr>
+			<tr>
+				<td>B1-出入口</td><td>击破上方的卡子，冰块落下，推砖块到开关上出现梯子，通往迷失之门（如果还未解锁就不能去）</td><td></td>
+			</tr>
+			<tr>
+				<td>B1-隐藏通路</td><td>击破右下方地板进入B2</td><td></td>
+			</tr>
+			<tr>
+				<td>C1-冰块</td><td>两个机关，对应自己那一层的冰块<ul>
+					<li>若先启动下方、再启动上方，可以形成存档点近路，上面的宝箱要有了二段跳才能拿</li>
+					<li>若先启动上方，则无法再启动下方，可以形成宝箱近路，存档点要有了二段跳才能去</li>
+				</ul></td><td></td>
+			</tr>
+			<tr id="chest">
+				<td>C1-宝箱</td><td>击破右上角的墙</td><td></td>
+			</tr>
+			<tr>
+				<td>C1-隐藏通路</td><td>右下角的冰柱是假的，可以穿过去，通往存档点</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="a2b2">白银的祭坛（A2、B2）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>A2-热泉</td><td>左下角有热泉，进去会掉血，打落上方的冰降温后可以作为温泉使用</td>
+			</tr>
+			<tr id="sheld">
+				<td>B2-白银之盾</td><td>从B1击破右下方地板进入解锁</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="d3d4d5d6">至墓道（D3、D4、D5、D6）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D3、D4、D5-电梯</td><td>在D6击破巨人的眼睛</td><td class="tip">我的眼可不瞎。——石碑（巨人墓场D6）</td>
+			</tr>
+			<tr id="map">
+				<td>D3-地图</td><td>放重物解锁，在D2放重物掉下冰块，从冰块上过去拿地图</td><td></td>
+			</tr>
+			<tr id="gauntlet">
+				<td>D4-金属手套</td><td>在C5推砖块解除激光，用经营之印解封，用二段跳和钩爪上去</td><td></td>
+			</tr>
+			<tr>
+				<td>D6-陷阱</td><td>在右下角放重物，出现敌人</td><td></td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="b5c5">第3墓室（B5、C5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="mirai">
+				<td>B5-mirai</td><td>从左边二段跳进入冰块里，放重物解锁</td>
+			</tr>
+			<tr>
+				<td>C5-砖块</td><td>推砖块压住激光，过去放重物，解除D4宝箱前的激光</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f3">言灵的祭坛（F3）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>F3-机关</td><td>将最左侧的平台踩至最低，解锁右侧平台，上去放重物解锁中间平台，放重物解除E5右上角激光（跳平台时，如果你跳得没那么高，平台就不会下降，这样就能放重物）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="f4g4">知识的祭坛（F4、G4）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="emusic">
+				<td>F4-emusic</td><td>扔炸弹炸开画面中间的冰块，用torude扫描获得</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e4e5">前室（E4、E5）</h4>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th><th>相关提示</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>E4、E5-机关</td><td>在F3启动机关后，E5右上角激光解除，放重物依次解除剩下的激光，中间出现梯子，上去推砖块解锁到E3的路</td><td></td>
+			</tr>
+			<tr>
+				<td>E4-近路</td><td>用炸弹炸开E4左侧的墙，连通左右区域</td><td class="tip">手拿新获得的武器。粉碎阻碍去路的墙吧。——石碑（巨人墓场E4）</td>
+			</tr>
+		</tbody>
+	</table>
+	<h4 id="e3">力之祭坛（E3）</h4>
+	<p>进入方式：E4推砖块解锁梯子</p>
+	<table class="table table-bordered">
+		<thead class="table-light">
+			<tr><th>对象</th><th>说明</th></tr>
+		</thead>
+		<tbody>
+			<tr id="bomb">
+				<td>E3-炸弹</td><td>击败小BOSS后解锁</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+</body></html>
