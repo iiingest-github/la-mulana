@@ -19,15 +19,15 @@ function tomark(id){
 	if(map.offsetTop == 0){
 		map = document.getElementsByTagName("table")[1];
 	}
-	window.scrollTo(window.pageXOffset,mark.offsetTop + map.clientHeight);
-	var t = setTimeout(function(){mark.className = "";},500);
+	window.scrollTo(window.pageXOffset,mark.offsetTop + map.clientHeight +200);
+	var t = setTimeout(function(){mark.className = "";},1000);
 }
 function tomark2(id){
 	var mark = document.getElementById(id);
 	mark.className = "marked";
 	var map = document.getElementsByTagName("table")[0];
-	window.scrollTo(window.pageXOffset,mark.parentNode.parentNode.offsetTop + map.clientHeight);
-	var t = setTimeout(function(){mark.className = "";},500);
+	window.scrollTo(window.pageXOffset,mark.parentNode.parentNode.offsetTop + map.clientHeight +200);
+	var t = setTimeout(function(){mark.className = "";},1000);
 }
 
 function totop(){
